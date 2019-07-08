@@ -23,6 +23,7 @@ body {
     padding: 5px;
     display: inline-block;
     margin-left: 40px;
+    border: 3.5px solid #000000;
   }
 
   .tiny-button {
@@ -30,6 +31,8 @@ body {
     border-radius: 50%;
     height: 50px;
     width: 50px;
+    margin: 0px 5px;
+    border: 3.5px solid #000000;
   }
 
   .top .tiny-button {
@@ -58,17 +61,17 @@ body {
   }
 
   .speaker {
-    background-color: purple;
     height: 200px;
     width: 300px;
     display: inline-block;
     position: relative;
     left: 29rem;
+    padding-top: 30px;
   }
 
   .grey-bar {
     width: 100%;
-    height: 40px;
+    height: 20px;
     background-color: grey;
     border-radius: 25px;
     margin: 1rem 0rem;
@@ -87,11 +90,12 @@ body {
   }
 
   .bezel {
-    background-color: grey;
+    background-color: #c1c1c1;
     height: 800px;
     padding: 2rem;
     margin-top: 5rem;
     border-radius: 15px;
+    border: 3.5px solid #000000;
 
   }
 
@@ -106,8 +110,6 @@ body {
   .d-pad {
     height: 300px;
     width: 300px;
-    position: relative;
-    top: 10rem;
   }
 
   .d-up, .d-left, .d-center, .d-right, .d-down {
@@ -132,6 +134,7 @@ body {
     margin: auto;
     background-color: #ffffff;
     display: block;
+    border: 2.5px solid #000000;
   }
 
   .sub-screen {
@@ -139,6 +142,23 @@ body {
     width: 550px;
     background-color: #fbfd00;
     border-radius: 25px;
+    padding: 2rem;
+    border: 3.5px solid #000000;
   }
+
+  .sub-screen input {
+    width: 100%;
+    font-size: 3rem;
+  }
+
+  .sub-screen select {
+    display: inline-block;
+    font-size: 3rem;
+  }
+
+  .sub-screen select option {
+    font-stretch: 0%;
+  }
+
 
 }
