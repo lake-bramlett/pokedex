@@ -6,12 +6,15 @@ body {
 }
 
 @media (min-width: 1000px) {
-  body {
+  .pokedex {
     display: none;
   }
 }
 
 @media (min-width: 600px) {
+  .mobile-error {
+    display: none;
+  }
   .pokedex {
     height: 520px;
     width: 100%;
