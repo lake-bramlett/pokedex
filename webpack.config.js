@@ -1,9 +1,9 @@
 const HtmlWebpackPlugin = require('html-webpack-plugin');
 const CleanWebpackPlugin = require('clean-webpack-plugin');
 const path = require('path');
-const Dotenv = require('dotenv-webpack');
-// this allows access to keys in the .env
-require('dotenv').config({ path: '.env' });
+
+
+
 
 module.exports = {
   entry: './src/main.js',
@@ -23,7 +23,7 @@ module.exports = {
   // plugins go here
   plugins: [
    new CleanWebpackPlugin(['dist']),
-   new Dotenv(),
+
    new HtmlWebpackPlugin({
     title: 'Your Page Name',
     template: './src/index.html',
@@ -32,6 +32,30 @@ module.exports = {
   ],
   // module rules go here
   module: {
+    rules: [
+      {
+        test: /\.(png|jpe?g|gif)$/,
+        use: [
+          {
+            loader: 'file-loader',
+            options: {},
+          },
+        ],
+      },
+    ],
+    rules: [{
+      test: /\.(gif|png|jpe?g|svg)$/i,
+      use: [
+        'file-loader',
+        {
+          loader: 'image-webpack-loader',
+          options: {
+            bypassOnDebug: true, // webpack@1.x
+            disable: true, // webpack@2.x and newer
+          },
+        },
+      ],
+    }],
     rules: [
       {
         test: /\.css$/,
