@@ -3,7 +3,7 @@ export class Pokemon{
     this.name = "name";
     this.number = "number";
     this.sprite = "sprite";
-    this.flavortext = "flavortext";
+    this.flavortext = [];
     this.type = [];
     this.height = "height";
     this.weight = "weight";
@@ -123,11 +123,11 @@ export class PokemonListByType {
 }
 
 
-const myPokemon = new Pokemon();
-
-myPokemon.pokemonNameCall("charizard");
-console.log(myPokemon);
-
-const myPokemonList = new PokemonListByType();
-myPokemonList.pokemonTypeCall("fire");
-console.log(myPokemonList);
+// const myPokemon = new Pokemon();
+//
+// myPokemon.pokemonNameCall("charizard");
+// console.log(myPokemon);
+//
+// const myPokemonList = new PokemonListByType();
+// myPokemonList.pokemonTypeCall("fire");
+// console.log(myPokemonList);
