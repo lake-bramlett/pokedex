@@ -1,6 +1,7 @@
 body {
   background-color: #fc2243;
   margin: 0px;
+  height: -webkit-fill-available;
 }
 
 @media (min-width: 600px) {
@@ -34,7 +35,7 @@ body {
     padding: 5px;
     display: inline-block;
     margin-left: 40px;
-    border: 3.5px solid #000000;
+
   }
 
   .tiny-button {
@@ -43,7 +44,7 @@ body {
     height: 50px;
     width: 50px;
     margin: 0px 5px;
-    border: 3.5px solid #000000;
+
   }
 
   .top .tiny-button {
@@ -53,7 +54,7 @@ body {
 
   .button-inner {
     border-radius: 50%;
-    background-color: blue;
+    background-color: #71cdf4;
     height: 100%;
     width: 100%;
     display: block;
@@ -93,18 +94,18 @@ body {
   }
 
   .green {
-    background-color: green;
+    background-color: #58bb68;
   }
 
   .yellow {
-    background-color: yellow;
+    background-color: #ffcf54;
   }
 
   .divider-block {
     height: 100%;
     width: 600px;
     position: relative;
-    right: -5px;
+    right: -33px;
     bottom: -10px;
     display: inline-block;
   }
@@ -129,8 +130,12 @@ body {
     margin-left: 2rem;
     margin-right: 2rem;
     border-radius: 15px;
-    border: 3.5px solid #000000;
 
+
+  }
+
+  .bottom {
+    padding: 10px 20px 0px 20px;
   }
 
   .bottom-left, .bottom-right {
@@ -139,6 +144,10 @@ body {
 
   .bottom-right {
     padding-left: 30px;
+  }
+
+  .bottom-left-top {
+    margin: 20px 0px;
   }
 
   .d-pad {
@@ -166,6 +175,8 @@ body {
   }
 
   .d-up {
+    position: relative;
+    bottom: -1px;
   }
 
   .d-right {
@@ -180,7 +191,7 @@ body {
 
   .d-down {
     position: relative;
-    bottom: 4px;
+    bottom: 5px;
   }
 
   .display-screen {
@@ -191,16 +202,16 @@ body {
     margin: auto;
     background-color: #e5f6fc;
     display: block;
-    border: 2.5px solid #000000;
   }
 
   .sub-screen {
     height: 225px;
-    width: 550px;
+    width: 530px;
     background-color: #fbfd00;
     border-radius: 25px;
     padding: 2rem;
-    border: 3.5px solid #000000;
+    text-align: center;
+
   }
 
   .sub-screen input {
