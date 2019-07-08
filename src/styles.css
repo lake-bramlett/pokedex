@@ -1,0 +1,31 @@
+body {
+  background-color: #D50625
+}
+
+@media (min-width: 600px) {
+  .pokedex {
+    height: 520px;
+    width: 950px;
+    background-color: #D50625;
+    margin: auto;
+  }
+
+  .button {
+    border-radius: 50%;
+    background-color: white;
+    height: 50px;
+    width: 50px;
+    display: block;
+  }
+
+  .display-screen {
+    position: relative;
+    top: 4rem;
+    width: 75%;
+    height: 600px;
+    margin: auto;
+    background-color: #ffffff;
+    display: block;
+  }
+
+}
