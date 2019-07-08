@@ -31,7 +31,8 @@ Pokemon.prototype.flavorTextLookup = function(userInput){
         result.push(pokemonText.flavor_text_entries[i].flavor_text);
       }
     }
-  $('#pokenow').text(userPokemon.flavortext[0]);
+    console.log(userPokemon.flavortext.length);
+  $('#pokenow').text(userPokemon.flavortext[Math.floor((Math.random() * userPokemon.flavortext.length ))]);
     // return result[0]
   });
 }// CLOSING flavor text
