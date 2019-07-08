@@ -1,5 +1,5 @@
 body {
-  background-color: #D50625;
+  background-color: #fc2243;
   margin: 0px;
 }
 
@@ -7,12 +7,23 @@ body {
   .pokedex {
     height: 520px;
     width: 100%;
-    background-color: #D50625;
+    background-color: #fc2243;
     margin: auto;
   }
 
   .top {
-    padding: 4rem 2rem;
+
+  }
+
+  .header {
+    background-color: #D50625;
+  }
+
+  .button-container-top {
+    display: inline-block;
+    background-color: #D50625;
+    position: relative;
+    bottom: 20px;
   }
 
   .button {
@@ -89,11 +100,34 @@ body {
     background-color: yellow;
   }
 
+  .divider-block {
+    height: 100%;
+    width: 600px;
+    position: relative;
+    right: -5px;
+    bottom: -10px;
+    display: inline-block;
+  }
+
+  .divider-block-top {
+    height: 100px;
+    width: 100%;
+    background-color: #D50625;
+  }
+
+  .divider-block-bottom {
+    height: 100px;
+    width: 100%;
+    background-color: #fc2243;
+  }
+
   .bezel {
     background-color: #c1c1c1;
     height: 800px;
     padding: 2rem;
     margin-top: 5rem;
+    margin-left: 2rem;
+    margin-right: 2rem;
     border-radius: 15px;
     border: 3.5px solid #000000;
 
@@ -126,13 +160,36 @@ body {
     display: inline-block;
   }
 
+  .d-center {
+    position: relative;
+    left: 4px;
+  }
+
+  .d-up {
+  }
+
+  .d-right {
+    position: relative;
+    left: -1px;
+  }
+
+  .d-left {
+    position: relative;
+    left: 9px;
+  }
+
+  .d-down {
+    position: relative;
+    bottom: 4px;
+  }
+
   .display-screen {
     position: relative;
     border-radius: 15px;
     width: 100%;
     height: 600px;
     margin: auto;
-    background-color: #ffffff;
+    background-color: #e5f6fc;
     display: block;
     border: 2.5px solid #000000;
   }
