@@ -3,7 +3,7 @@
   <head>
     <meta charset="utf-8">
     <title></title>
-
+    <link href="https://fonts.googleapis.com/css?family=VT323&display=swap" rel="stylesheet">
   </head>
   <body>
     <div class="pokedex">
@@ -21,7 +21,10 @@
           </div>
         </div>
         <div class="bezel">
-          <div class="display-screen"></div>
+          <div class="display-screen">
+            <div class="sprite-container"></div>
+            <div class="flavor-text-box"></div>
+          </div>
           <div class="tiny-button red"></div>
           <div class="speaker">
             <div class="grey-bar"></div>
@@ -49,47 +52,59 @@
           </div>
           <div class="bottom-left-bottom">
             <div class="sub-screen">
-              <input type="text" name="" value="" id="name"><span id="display"></span>
-              <select class="type-1" name="">
-                <option value="bug">bug</option>
-                <option value="dark">dark</option>
-                <option value="dragon">dragon</option>
-                <option value="electric">electric</option>
-                <option value="fairy">fairy</option>
-                <option value="fighting">fighting</option>
-                <option value="fire">fire</option>
-                <option value="flying">flying</option>
-                <option value="ghost">ghost</option>
-                <option value="grass">grass</option>
-                <option value="ground">ground</option>
-                <option value="ice">ice</option>
-                <option value="normal">normal</option>
-                <option value="poison">poison</option>
-                <option value="psychic">psychic</option>
-                <option value="rock">rock</option>
-                <option value="steel">steel</option>
-                <option value="water">water</option>
-              </select>
-              <select class="type-2" name="">
-                <option value="bug">bug</option>
-                <option value="dark">dark</option>
-                <option value="dragon">dragon</option>
-                <option value="electric">electric</option>
-                <option value="fairy">fairy</option>
-                <option value="fighting">fighting</option>
-                <option value="fire">fire</option>
-                <option value="flying">flying</option>
-                <option value="ghost">ghost</option>
-                <option value="grass">grass</option>
-                <option value="ground">ground</option>
-                <option value="ice">ice</option>
-                <option value="normal">normal</option>
-                <option value="poison">poison</option>
-                <option value="psychic">psychic</option>
-                <option value="rock">rock</option>
-                <option value="steel">steel</option>
-                <option value="water">water</option>
-              </select>
+              <div class="name-block">
+                <span>Name: </span><input type="text" name="" value="" id="name"><span id="display"></span>
+              </div>
+              <div class="type-block">
+                <span>Type: </span>
+                <select class="type-1" name="">
+                  <option value="">---</option>
+                  <option value="dark">dark</option>
+                  <option value="dragon">dragon</option>
+                  <option value="electric">electric</option>
+                  <option value="fairy">fairy</option>
+                  <option value="fighting">fighting</option>
+                  <option value="fire">fire</option>
+                  <option value="flying">flying</option>
+                  <option value="ghost">ghost</option>
+                  <option value="grass">grass</option>
+                  <option value="ground">ground</option>
+                  <option value="ice">ice</option>
+                  <option value="normal">normal</option>
+                  <option value="poison">poison</option>
+                  <option value="psychic">psychic</option>
+                  <option value="rock">rock</option>
+                  <option value="steel">steel</option>
+                  <option value="water">water</option>
+                </select>
+                <select class="type-2" name="">
+                  <option value="">---</option>
+                  <option value="bug">bug</option>
+                  <option value="dark">dark</option>
+                  <option value="dragon">dragon</option>
+                  <option value="electric">electric</option>
+                  <option value="fairy">fairy</option>
+                  <option value="fighting">fighting</option>
+                  <option value="fire">fire</option>
+                  <option value="flying">flying</option>
+                  <option value="ghost">ghost</option>
+                  <option value="grass">grass</option>
+                  <option value="ground">ground</option>
+                  <option value="ice">ice</option>
+                  <option value="normal">normal</option>
+                  <option value="poison">poison</option>
+                  <option value="psychic">psychic</option>
+                  <option value="rock">rock</option>
+                  <option value="steel">steel</option>
+                  <option value="water">water</option>
+                </select>
+              </div>
+              <div class="height-block">
+                <span>Height:</span><span class="output"></span>
+              </div>
+              <div class="weight-block">
+                <span>Weight:</span><span class="output"></span>
+              </div>
             </div>
           </div>
         </div>
