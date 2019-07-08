@@ -52,9 +52,22 @@ body {
   .d-pad {
     height: 300px;
     width: 300px;
-    background-color: grey;
     position: relative;
     top: 10rem;
+  }
+
+  .d-up, .d-left, .d-center, .d-right, .d-down {
+    height: 95px;
+    width: 95px;
+    background-color: grey;
+  }
+
+  .d-up, .d-down {
+    margin: auto;
+  }
+
+  .d-left, .d-center, .d-right {
+    display: inline-block;
   }
 
   .display-screen {
