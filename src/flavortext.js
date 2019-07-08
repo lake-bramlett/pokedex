@@ -1,5 +1,6 @@
 
 import {Pokemon} from "./pokemon-api-caller.js";
+import $ from "jquery";
 let userInput = "charmander";
 let userLang = "en";
 let userPokemon = new Pokemon();
@@ -30,14 +31,14 @@ Pokemon.prototype.flavorTextLookup = function(userInput){
         result.push(pokemonText.flavor_text_entries[i].flavor_text);
       }
     }
-  console.log(userPokemon.flavortext[4]);
-    // console.log(result[0])
+  $('#pokenow').text(userPokemon.flavortext[0]);
     // return result[0]
   });
 }// CLOSING flavor text
 
 userPokemon.flavorTextLookup(userInput);
-console.log(userPokemon.flavortext.length);
-console.log(typeof userPokemon.flavortext);
+// let test = userPokemon.flavortext;
+// console.log(test);
+// console.log(typeof userPokemon.flavortext);
 // console.log(result[0]);
 // console.log(userPokemon.flavorTextLookup(userInput));
