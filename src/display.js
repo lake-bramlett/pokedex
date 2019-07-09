@@ -1,5 +1,5 @@
 import $ from 'jquery'
-
+import "./weight-height-calc.js";
 import {Pokemon, myPokemon} from "./pokemon-api-caller.js";
 
 // this controls timers for the displayText function
@@ -16,6 +16,17 @@ let typeWriter = (txt) => {
     setTimeout(typeWriter, speed);
   }
 }
+
+export function convertWeight(inputWeight){
+  let newWeight = inputWeight*(0.1);
+  return newWeight.toFixed(1);
+}
+
+export function convertHeight (inputHeight){
+  let newHeight = inputHeight*(0.1);
+  return newHeight.toFixed(1);
+}
+
 
 Pokemon.prototype.displayImg = function(){
   let displayArea = $(".sprite-container");
@@ -35,7 +46,6 @@ Pokemon.prototype.displayText = function(){
   $(".flavor-text-box").text("");
   let i = 0;
   let flavorArray = Array.from(this.flavortext[0]);
-  console.log(flavorArray);
   let typewriter = function(inputArray){
     $(".flavor-text-box").append(flavorArray[i]);
     i++;
@@ -50,7 +60,17 @@ Pokemon.prototype.displayText = function(){
 
   // this sets the values on the lower display
 
-  
+}
+
+Pokemon.prototype.displayStats = function(){
+  $("#name").val(`${this.name}`);
+  $(".type-1").val(`${this.type[0]}`);
+  if(this.type[1] != undefined){
+    $(".type-2").val(`${this.type[1]}`);
+  }
+
+  $(".height-block .output").text(convertHeight(`${this.height}`) + "m");
+  $(".weight-block .output").text(convertWeight(`${this.weight}`) + "kg");
 }
 
 

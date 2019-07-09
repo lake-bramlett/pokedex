@@ -47,6 +47,7 @@ export class Pokemon{
       // this is where the front end functions are called
         this.displayImg();
         this.playSound();
+        this.displayStats();
       //
 
     })
@@ -133,5 +134,5 @@ export class PokemonListByType {
 export const myPokemon = new Pokemon();
 
 const myPokemonList = new PokemonListByType();
-
+myPokemonList.pokemonTypeCall("fire");
 console.log(myPokemonList);
