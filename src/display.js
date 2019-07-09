@@ -1,8 +1,10 @@
 import $ from 'jquery'
 
-export function displayImg(pokemon){
-  let displayArea = $(".display-screen");
-  let img = `<img src='${pokemon.sprite}'>`;
-  console.log(`<img src='${pokemon.sprite}'>`)
-  displayArea.html(img)
+import {Pokemon, myPokemon} from "./pokemon-api-caller.js";
+
+Pokemon.prototype.displayImg = function(pokemon){
+  let displayArea = $(".sprite-container");
+  let img = `<img src='${this.sprite}'>`;
+  console.log(`<img src='${this.sprite}'>`);
+  displayArea.html(img);
 }

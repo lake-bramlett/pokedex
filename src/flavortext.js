@@ -1,13 +1,14 @@
 
 import {Pokemon} from "./pokemon-api-caller.js";
 import $ from "jquery";
+import "./display.js";
 let userInput = "charmander";
 let userLang = "en";
 let userPokemon = new Pokemon();
 let result = [];
 
 Pokemon.prototype.flavorTextLookup = function(userInput){
-  // this.pokemonNameCall(userInput)
+  this.pokemonNameCall(userInput);
   let flavorTextPromise = new Promise(function (resolve, reject) {
     let request = new XMLHttpRequest();
     let url = `https://pokeapi.co/api/v2/pokemon-species/${userInput}`;
@@ -22,6 +23,7 @@ Pokemon.prototype.flavorTextLookup = function(userInput){
     request.send();
   });
 
+
   flavorTextPromise.then(response => {
     let pokemonText = JSON.parse(response)
     // for (let i=0; i <pokemonText.flavor_text_entries.length; i++) {
@@ -30,14 +32,20 @@ Pokemon.prototype.flavorTextLookup = function(userInput){
         this.flavortext.push(pokemonText.flavor_text_entries[i].flavor_text);
         result.push(pokemonText.flavor_text_entries[i].flavor_text);
       }
+      
+
     }
-    console.log(userPokemon.flavortext.length);
-  $('#pokenow').text(userPokemon.flavortext[Math.floor((Math.random() * userPokemon.flavortext.length ))]);
+
+
+
+  // $('#pokenow').text(userPokemon.flavortext[Math.floor((Math.random() * userPokemon.flavortext.length ))]);
     // return result[0]
   });
 }// CLOSING flavor text
 
+
 userPokemon.flavorTextLookup(userInput);
+
 // let test = userPokemon.flavortext;
 // console.log(test);
 // console.log(typeof userPokemon.flavortext);
