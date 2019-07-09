@@ -1,3 +1,4 @@
+
 export class Pokemon{
   constructor() {
     this.name = "name";
@@ -34,7 +35,7 @@ export class Pokemon{
       this.name = pokemonCalled.name;
       this.number = pokemonCalled.id;
       this.sprite = pokemonCalled.sprites.front_default;
-      this.flavortext = "";
+
       // pushing each type to the this.type array;
       for (let i = 0; i < pokemonCalled.types.length; i++) {
           this.type.push(pokemonCalled.types[i].type.name);
@@ -42,9 +43,9 @@ export class Pokemon{
       this.height = pokemonCalled.height;
       this.weight = pokemonCalled.weight;
 
-      this.pokemonFlavorTextCall(pokemonName);
-      // this is where the front end functions are called
 
+      // this is where the front end functions are called
+        this.displayImg();
       //
 
     })
@@ -75,8 +76,7 @@ export class Pokemon{
     pokeFlavorPromise.then(response => {
       let pokemonCalled = JSON.parse(response);
       this.flavortext = pokemonCalled.flavor_text_entries[0].flavor_text;
-      console.log(this);
-      console.log(this.flavortext);
+
 
       // for (let i = 0; i < pokemonCalled.flavor_text_entries.length; i++) {
       //     if (pokemonCalled.flavor_text_entries[i].language.name === language) {
@@ -129,9 +129,8 @@ export class PokemonListByType {
     }
 }
 
-const myPokemon = new Pokemon();
-myPokemon.pokemonNameCall("charizard");
-const myPokemonList = new PokemonListByType();
-myPokemonList.pokemonTypeCall("fire");
-console.log(myPokemonList);
+export const myPokemon = new Pokemon();
 
+const myPokemonList = new PokemonListByType();
+
+console.log(myPokemonList);
