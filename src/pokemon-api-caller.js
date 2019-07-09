@@ -31,7 +31,7 @@ export class Pokemon{
 
     pokeNamePromise.then(response => {
       let pokemonCalled = JSON.parse(response);
-      console.log(pokemonCalled);
+      // console.log(pokemonCalled);
       this.name = pokemonCalled.name;
       this.number = pokemonCalled.id;
       this.sprite = pokemonCalled.sprites.front_default;
@@ -133,4 +133,4 @@ export const myPokemon = new Pokemon();
 
 const myPokemonList = new PokemonListByType();
 
-console.log(myPokemonList);
+// console.log(myPokemonList);
