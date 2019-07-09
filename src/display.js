@@ -2,6 +2,7 @@ import $ from 'jquery'
 
 import {Pokemon, myPokemon} from "./pokemon-api-caller.js";
 
+// this controls timers for the displayText function
 const timerArray = [];
 
 let typeWriter = (txt) => {
@@ -24,12 +25,13 @@ Pokemon.prototype.displayImg = function(){
 }
 
 Pokemon.prototype.displayText = function(){
-  // let textDisplay = $(".flavor-text-box");
-  // console.log(`${this.flavortext}`)
+
+  // this prints the flavor text to the display
+  // the timer array is important so that the text doesn't print out multiple times on the page, it's really funny but shouldn't be a feature
   timerArray.forEach(function(entry){
     clearInterval(entry);
   });
-  
+
   $(".flavor-text-box").text("");
   let i = 0;
   let flavorArray = Array.from(this.flavortext[0]);
@@ -44,12 +46,11 @@ Pokemon.prototype.displayText = function(){
 
   let typewriterTimer = setInterval(function(){typewriter(flavorArray);}, 70);
   timerArray.push(typewriterTimer);
+  /// this is the end of the flavor text display portion
 
+  // this sets the values on the lower display
 
-  // $('.flavor-text-box').append(`<p>${this.flavortext[0]}</p>`);
-  // let flavorText = 'this is flavor text'
-  // typeWriter(flavorText)
-  // textDisplay.html(text)
+  
 }
 
 
