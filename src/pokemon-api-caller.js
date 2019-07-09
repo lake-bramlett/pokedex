@@ -46,6 +46,7 @@ export class Pokemon{
 
       // this is where the front end functions are called
         this.displayImg();
+
       //
 
     })
@@ -54,39 +55,41 @@ export class Pokemon{
 
 
 
-  pokemonFlavorTextCall(pokemonName, language){
-    let pokeFlavorPromise = new Promise(function(resolve,reject){
-      const url = `https://pokeapi.co/api/v2/pokemon-species/${pokemonName}`;
-      let request = new XMLHttpRequest();
-
-      request.onload = function(){
-        if (this.status === 200) {
-          console.log("Api responded!");
-          resolve(request.response);
-        }else {
-          console.log("Rejection!!");
-          reject(Error(request.statusText));
-        }
-      }
-
-      request.open("GET", url, true);
-      request.send();
-    });
-
-    pokeFlavorPromise.then(response => {
-      let pokemonCalled = JSON.parse(response);
-      this.flavortext = pokemonCalled.flavor_text_entries[0].flavor_text;
-
+  // pokemonFlavorTextCall(pokemonName, language){
+  //   let pokeFlavorPromise = new Promise(function(resolve,reject){
+  //     const url = `https://pokeapi.co/api/v2/pokemon-species/${pokemonName}`;
+  //     let request = new XMLHttpRequest();
+  //
+  //     request.onload = function(){
+  //       if (this.status === 200) {
+  //         console.log("Api responded!");
+  //         resolve(request.response);
+  //       }else {
+  //         console.log("Rejection!!");
+  //         reject(Error(request.statusText));
+  //       }
+  //     }
+  //
+  //     request.open("GET", url, true);
+  //     request.send();
+  //   });
+  //
+  //   pokeFlavorPromise.then(response => {
+  //     let pokemonCalled = JSON.parse(response);
+  //     this.flavortext = pokemonCalled.flavor_text_entries[0].flavor_text;
+  //
+  //
+  //
 
       // for (let i = 0; i < pokemonCalled.flavor_text_entries.length; i++) {
       //     if (pokemonCalled.flavor_text_entries[i].language.name === language) {
       //       return this.flavortext = pokemonCalled.flavor_text_entries[i].flavor_text;
       //
       //     }
-      // }
-    })
-
-  }
+  //     // }
+  //   })
+  //
+  // }
 
 
 
