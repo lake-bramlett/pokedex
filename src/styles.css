@@ -233,11 +233,10 @@ body {
 
   .list-display {
     overflow: auto;
-    width: 600px;
-    max-height: 545px;
+    height: 576px;
     top: 1rem;
     font-size: 2.5rem;
-    position: absolute;
+    margin: auto;
     width: 90%;
     overflow: auto;
     left: 2.6rem;
