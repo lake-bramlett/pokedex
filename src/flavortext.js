@@ -32,10 +32,10 @@ Pokemon.prototype.flavorTextLookup = function(userInput){
         this.flavortext.push(pokemonText.flavor_text_entries[i].flavor_text);
         result.push(pokemonText.flavor_text_entries[i].flavor_text);
       }
-      
 
     }
 
+    this.displayText();
 
 
   // $('#pokenow').text(userPokemon.flavortext[Math.floor((Math.random() * userPokemon.flavortext.length ))]);
@@ -43,8 +43,8 @@ Pokemon.prototype.flavorTextLookup = function(userInput){
   });
 }// CLOSING flavor text
 
-
-userPokemon.flavorTextLookup(userInput);
+// 
+// userPokemon.flavorTextLookup(userInput);
 
 // let test = userPokemon.flavortext;
 // console.log(test);
