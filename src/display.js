@@ -99,6 +99,7 @@ PokemonListByType.prototype.displayList = function(){
 // just for testing
 $(document).ready(function(){
   $(".type-1").change(function(){
+    $(".type-2").val("");
     console.log("working");
     let selectedType = $('.type-1 option:selected').val();
     console.log(selectedType);
