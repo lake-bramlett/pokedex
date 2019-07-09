@@ -73,7 +73,7 @@ body {
 
   .button-2 {
     text-align: center;
-    border-radius: 25%;
+    border-radius: 25px;
     height: 50px;
     width: 200px;
     display: inline-block;
@@ -268,6 +268,7 @@ body {
     width: 80%;
     font-size: 3rem;
     font-family: 'VT323', monospace;
+    color: #587e8c;
   }
 
   .sub-screen select {
@@ -312,7 +313,7 @@ body {
 
   .yellow-blink-off {
     transition: background-color 1s ease;
-    background-color: #dec554;
+    background-color: #c2ac4a;
   }
 
   .green-blink-on {
