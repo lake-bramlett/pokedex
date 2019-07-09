@@ -46,7 +46,7 @@ export class Pokemon{
 
       // this is where the front end functions are called
         this.displayImg();
-
+        this.playSound();
       //
 
     })
@@ -79,13 +79,11 @@ export class Pokemon{
   //     this.flavortext = pokemonCalled.flavor_text_entries[0].flavor_text;
   //
   //
-  //
-
-      // for (let i = 0; i < pokemonCalled.flavor_text_entries.length; i++) {
-      //     if (pokemonCalled.flavor_text_entries[i].language.name === language) {
-      //       return this.flavortext = pokemonCalled.flavor_text_entries[i].flavor_text;
-      //
-      //     }
+  //     // for (let i = 0; i < pokemonCalled.flavor_text_entries.length; i++) {
+  //     //     if (pokemonCalled.flavor_text_entries[i].language.name === language) {
+  //     //       return this.flavortext = pokemonCalled.flavor_text_entries[i].flavor_text;
+  //     //
+  //     //     }
   //     // }
   //   })
   //

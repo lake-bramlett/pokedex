@@ -2,10 +2,12 @@
 import {Pokemon} from "./pokemon-api-caller.js";
 import $ from "jquery";
 import "./display.js";
-let userInput = "charmander";
+let userInput = "pikachu";
 let userLang = "en";
 let userPokemon = new Pokemon();
 let result = [];
+
+// flavorTextLookup is one of the major functions to get everything to load on the page
 
 Pokemon.prototype.flavorTextLookup = function(userInput){
   this.pokemonNameCall(userInput);
@@ -36,6 +38,7 @@ Pokemon.prototype.flavorTextLookup = function(userInput){
     }
 
     this.displayText();
+
 
 
   // $('#pokenow').text(userPokemon.flavortext[Math.floor((Math.random() * userPokemon.flavortext.length ))]);
