@@ -1,0 +1,270 @@
+body {
+  background-color: #fc2243;
+  margin: 0px;
+  height: -webkit-fill-available;
+  font-family: 'VT323', monospace;
+}
+
+@media (min-width: 1000px) {
+  .pokedex {
+    display: none;
+  }
+}
+
+@media (min-width: 600px) {
+  .mobile-error {
+    display: none;
+  }
+  .pokedex {
+    height: 520px;
+    width: 100%;
+    background-color: #fc2243;
+    margin: auto;
+  }
+
+  .top {
+
+  }
+
+  .header {
+    background-color: #D50625;
+  }
+
+  .button-container-top {
+    display: inline-block;
+    background-color: #D50625;
+    position: relative;
+    bottom: 20px;
+  }
+
+  .button {
+    border-radius: 50%;
+    background-color: white;
+    height: 100px;
+    width: 100px;
+    padding: 5px;
+    display: inline-block;
+    margin-left: 40px;
+
+  }
+
+  .tiny-button {
+    display: inline-block;
+    border-radius: 50%;
+    height: 50px;
+    width: 50px;
+    margin: 0px 5px;
+
+  }
+
+  .top .tiny-button {
+    position: relative;
+    bottom: 85px;
+  }
+
+  .button-inner {
+    border-radius: 50%;
+    background-color: #71cdf4;
+    height: 100%;
+    width: 100%;
+    display: block;
+  }
+
+  .button-2 {
+    text-align: center;
+    border-radius: 25%;
+    height: 50px;
+    width: 200px;
+    display: inline-block;
+  }
+
+  .button-2 select {
+    font-size: 3rem;
+    font-family: 'VT323', monospace;
+  }
+
+  .bottom .tiny-button {
+    position: relative;
+    bottom: 115px;
+  }
+
+  .speaker {
+    height: 200px;
+    width: 300px;
+    display: inline-block;
+    position: relative;
+    left: 29rem;
+    padding-top: 30px;
+  }
+
+  .grey-bar {
+    width: 100%;
+    height: 20px;
+    background-color: grey;
+    border-radius: 25px;
+    margin: 1rem 0rem;
+  }
+
+  .red {
+    background-color: red;
+  }
+
+  .green {
+    background-color: #58bb68;
+  }
+
+  .yellow {
+    background-color: #ffcf54;
+  }
+
+  .divider-block {
+    height: 100%;
+    width: 600px;
+    position: relative;
+    right: -33px;
+    bottom: -10px;
+    display: inline-block;
+  }
+
+  .divider-block-top {
+    height: 100px;
+    width: 100%;
+    background-color: #D50625;
+  }
+
+  .divider-block-bottom {
+    height: 100px;
+    width: 100%;
+    background-color: #fc2243;
+  }
+
+  .bezel {
+    background-color: #c1c1c1;
+    height: 800px;
+    padding: 2rem;
+    margin-top: 5rem;
+    margin-left: 2rem;
+    margin-right: 2rem;
+    border-radius: 15px;
+
+
+  }
+
+  .bottom {
+    padding: 10px 20px 0px 20px;
+  }
+
+  .bottom-left, .bottom-right {
+    display: inline-block;
+  }
+
+  .bottom-right {
+    padding-left: 30px;
+  }
+
+  .bottom-left-top {
+    margin: 20px 0px;
+  }
+
+  .d-pad {
+    height: 300px;
+    width: 300px;
+  }
+
+  .d-up, .d-left, .d-center, .d-right, .d-down {
+    height: 95px;
+    width: 95px;
+    background-color: grey;
+  }
+
+  .d-up, .d-down {
+    margin: auto;
+  }
+
+  .d-left, .d-center, .d-right {
+    display: inline-block;
+  }
+
+  .d-center {
+    position: relative;
+    left: 4px;
+  }
+
+  .d-up {
+    position: relative;
+    bottom: -1px;
+  }
+
+  .d-right {
+    position: relative;
+    left: -3px;
+  }
+
+  .d-left {
+    position: relative;
+    left: 12px;
+  }
+
+  .d-down {
+    position: relative;
+    bottom: 5px;
+  }
+
+  .display-screen {
+    position: relative;
+    border-radius: 15px;
+    width: 100%;
+    height: 600px;
+    margin: auto;
+    background-color: #e5f6fc;
+    display: block;
+    text-align: center;
+  }
+
+  .sprite-container {
+    width: 100%;
+    height: 65%;
+  }
+
+  .flavor-text-box {
+    width: 100%;
+    height: 35%;
+  }
+
+  img {
+    width: 60%
+  }
+
+  .sub-screen {
+    height: 225px;
+    width: 530px;
+    background-color: #e5f6fc;
+    border-radius: 25px;
+    padding: 2rem;
+  }
+  .sub-screen span {
+    display: inline-block;
+    font-size: 3rem;
+  }
+
+  .sub-screen input {
+    background-color: #e5f6fc;
+    border: none;
+    width: 80%;
+    font-size: 3rem;
+    font-family: 'VT323', monospace;
+  }
+
+  .sub-screen select {
+    display: inline-block;
+    font-size: 3rem;
+    font-family: 'VT323', monospace;
+  }
+
+  .sub-screen select option {
+    font-stretch: 0%;
+    font-family: 'VT323', monospace;
+  }
+
+
+}

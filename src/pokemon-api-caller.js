@@ -17,7 +17,6 @@ export class Pokemon{
 
       request.onload = function(){
         if (this.status === 200) {
-          console.log("Api responded!");
           resolve(request.response);
         }else {
           console.log("Rejection!!");
@@ -43,6 +42,7 @@ export class Pokemon{
       this.height = pokemonCalled.height;
       this.weight = pokemonCalled.weight;
 
+      this.pokemonFlavorTextCall(pokemonName);
       // this is where the front end functions are called
 
       //
@@ -50,40 +50,48 @@ export class Pokemon{
     })
 
   }
-//
-//
-//
-//   pokemonSpeciesCall(pokemonName){
-//     let pokeSpeciesPromise = new Promise(function(resolve,reject){
-//       const url = `https://pokeapi.co/api/v2/pokemon-species/${pokemonName}`;
-//       let request = new XMLHttpRequest();
-//
-//       request.onload = function(){
-//         if (this.status === 200) {
-//           console.log("Api responded!");
-//           resolve(request.response);
-//         }else {
-//           console.log("Rejection!!");
-//           reject(Error(request.statusText));
-//         }
-//       }
-//
-//       request.open("GET", url, true);
-//       request.send();
-//     });
-//
-//     pokeSpeciesPromise.then(response =>{
-//       let pokemonCalled = JSON.parse(response);
-//       console.log(pokemonCalled);
-//       return pokemonCalled;
-//     })
-//
-//   }
-//
-//
-//
 
-}
+
+
+  pokemonFlavorTextCall(pokemonName, language){
+    let pokeFlavorPromise = new Promise(function(resolve,reject){
+      const url = `https://pokeapi.co/api/v2/pokemon-species/${pokemonName}`;
+      let request = new XMLHttpRequest();
+
+      request.onload = function(){
+        if (this.status === 200) {
+          console.log("Api responded!");
+          resolve(request.response);
+        }else {
+          console.log("Rejection!!");
+          reject(Error(request.statusText));
+        }
+      }
+
+      request.open("GET", url, true);
+      request.send();
+    });
+
+    pokeFlavorPromise.then(response => {
+      let pokemonCalled = JSON.parse(response);
+      this.flavortext = pokemonCalled.flavor_text_entries[0].flavor_text;
+      console.log(this);
+      console.log(this.flavortext);
+
+      // for (let i = 0; i < pokemonCalled.flavor_text_entries.length; i++) {
+      //     if (pokemonCalled.flavor_text_entries[i].language.name === language) {
+      //       return this.flavortext = pokemonCalled.flavor_text_entries[i].flavor_text;
+      //
+      //     }
+      // }
+    })
+
+  }
+
+
+
+
+} // closing the pokemon class
 
 export class PokemonListByType {
   constructor(){
@@ -96,7 +104,6 @@ export class PokemonListByType {
 
         request.onload = function(){
           if (this.status === 200) {
-            console.log("Api responded!");
             resolve(request.response);
           }else {
             console.log("Rejection!!");
@@ -122,12 +129,9 @@ export class PokemonListByType {
     }
 }
 
+const myPokemon = new Pokemon();
+myPokemon.pokemonNameCall("charizard");
+const myPokemonList = new PokemonListByType();
+myPokemonList.pokemonTypeCall("fire");
+console.log(myPokemonList);
 
-// const myPokemon = new Pokemon();
-//
-// myPokemon.pokemonNameCall("charizard");
-// console.log(myPokemon);
-//
-// const myPokemonList = new PokemonListByType();
-// myPokemonList.pokemonTypeCall("fire");
-// console.log(myPokemonList);
