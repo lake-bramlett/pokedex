@@ -28,4 +28,5 @@ export function blinkingButtons () {
 Pokemon.prototype.imgAnimation = function () {
   $('.sprite-container img').addClass('rotate-center')
   setTimeout(function(){$('.sprite-container img').removeClass('rotate-center')},1000)
+  this.playSound();
 }
