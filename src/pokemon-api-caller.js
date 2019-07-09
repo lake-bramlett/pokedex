@@ -126,13 +126,13 @@ export class PokemonListByType {
             this.list.push(typeResponse.pokemon[i].pokemon.name);
           }
         }
+
+        // front end stuff for the type lists goes here
+        this.displayList();
+
       })
 
     }
 }
 
 export const myPokemon = new Pokemon();
-
-const myPokemonList = new PokemonListByType();
-myPokemonList.pokemonTypeCall("fire");
-console.log(myPokemonList);

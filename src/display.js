@@ -1,6 +1,7 @@
 import $ from 'jquery'
 import "./weight-height-calc.js";
-import {Pokemon, myPokemon} from "./pokemon-api-caller.js";
+import {flavorTextLookup} from "./flavortext.js";
+import {Pokemon, myPokemon, PokemonListByType} from "./pokemon-api-caller.js";
 
 // this controls timers for the displayText function
 const timerArray = [];
@@ -28,7 +29,11 @@ export function convertHeight (inputHeight){
 }
 
 
+
 Pokemon.prototype.displayImg = function(){
+  $(".list-display").hide();
+  $(".display-screen .sprite-container").show();
+  $(".display-screen .flavor-text-box").show();
   let displayArea = $(".sprite-container");
   let img = `<img src='${this.sprite}'>`;
   console.log(`<img src='${this.sprite}'>`);
@@ -73,11 +78,37 @@ Pokemon.prototype.displayStats = function(){
   $(".weight-block .output").text(convertWeight(`${this.weight}`) + "kg");
 }
 
+// this displays a list of pokemon by type to the display image
 
+PokemonListByType.prototype.displayList = function(){
+  $(".list-display").show();
+  $(".list-display").text("");
+  $(".display-screen .sprite-container").hide();
+  $(".display-screen .flavor-text-box").hide();
+  this.list.forEach((listItem)=>{
+    $(".list-display").append(`<p class = "${listItem}">${listItem}</p>`);
+    $(`.${listItem}`).click(()=>{
+      let listPokemon = new Pokemon();
+      console.log(listPokemon);
+      listPokemon.flavorTextLookup(`${listItem}`);
+
+     });
+  });
+}
+
+// just for testing
 $(document).ready(function(){
-  $(".button-inner").click(function(){
-    let userInput = $("#name").val();
-    let newPokemon = new Pokemon();
-    newPokemon.flavorTextLookup(userInput);
-  })
-})
+  $(".type-1").change(function(){
+    console.log("working");
+    let selectedType = $('.type-1 option:selected').val();
+    console.log(selectedType);
+    // let userInput = $("#name").val();
+    // let newPokemon = new Pokemon();
+    // newPokemon.flavorTextLookup(userInput);
+    let myPokemonList = new PokemonListByType();
+
+    myPokemonList.pokemonTypeCall(`${selectedType}`);
+    console.log(myPokemonList);
+
+  });
+});
