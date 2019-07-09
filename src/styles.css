@@ -229,6 +229,8 @@ body {
   .flavor-text-box {
     width: 100%;
     height: 35%;
+    overflow: auto;
+    font-size: 2.5rem;
   }
 
   img {
@@ -264,6 +266,14 @@ body {
   .sub-screen select option {
     font-stretch: 0%;
     font-family: 'VT323', monospace;
+  }
+
+  .screen-off {
+    background-color: #000000b0;
+  }
+
+  .screen-on {
+    background-color: #e5f6fc;
   }
 
 
