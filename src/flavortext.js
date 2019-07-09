@@ -46,8 +46,8 @@ Pokemon.prototype.flavorTextLookup = function(userInput){
   });
 }// CLOSING flavor text
 
-// 
-// userPokemon.flavorTextLookup(userInput);
+//
+userPokemon.flavorTextLookup(userInput);
 
 // let test = userPokemon.flavortext;
 // console.log(test);
