@@ -3,7 +3,7 @@ body {
   margin: 0px;
   height: -webkit-fill-available;
   font-family: 'VT323', monospace;
-  color: #004f6b;
+  color: #587e8c;
 }
 
 @media (min-width: 1000px) {
@@ -279,20 +279,50 @@ body {
   .sub-screen select option {
     font-stretch: 0%;
     font-family: 'VT323', monospace;
-    color: #004f6b;
+    color: #587e8c;
   }
 
   .type-block select {
-    color: #004f6b;
+    color: #587e8c;
   }
 
   .screen-off {
-    background-color: #004f6b;
+    background-color: #587e8c;
   }
 
   .screen-on {
     transition: background-color 1.5s ease;
     background-color: #e5f6fc;
+  }
+
+  .red-blink-on {
+    transition: background-color 1s ease;
+    background-color: #ff0400;
+  }
+
+  .red-blink-off {
+    transition: background-color 1s ease;
+    background-color: #b50020;
+  }
+
+  .yellow-blink-on {
+    transition: background-color 1s ease;
+    background-color: #ffee04;
+  }
+
+  .yellow-blink-off {
+    transition: background-color 1s ease;
+    background-color: #dec554;
+  }
+
+  .green-blink-on {
+    transition: background-color 1s ease;
+    background-color: #5bf574;
+  }
+
+  .green-blink-off {
+    transition: background-color 1s ease;
+    background-color: #58bb68;
   }
 
   .enter-button {
