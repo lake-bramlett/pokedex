@@ -1,4 +1,6 @@
 import $ from "jquery";
+import {Pokemon} from "./pokemon-api-caller.js";
+
 
 export function bootUp () {
   $('.display-screen').removeClass('screen-off').addClass('screen-on');
@@ -22,3 +24,8 @@ export function blinkingButtons () {
     $('.button-container-top .tiny-button.green').toggleClass('green-blink-off green-blink-on');
   }, 4000);
 };
+
+Pokemon.prototype.imgAnimation = function () {
+  $('.sprite-container img').addClass('rotate-center')
+  setTimeout(function(){$('.sprite-container img').removeClass('rotate-center')},1000)
+}

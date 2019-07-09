@@ -4,6 +4,6 @@ import $ from "jquery";
 
 Pokemon.prototype.playSound = function(){
   let cry = new Audio(`../audio/${this.number}.ogg`);
-    cry.play();
+  cry.play();
 
 }
