@@ -2,6 +2,8 @@ import $ from 'jquery'
 
 import {Pokemon, myPokemon} from "./pokemon-api-caller.js";
 
+const timerArray = [];
+
 let typeWriter = (txt) => {
   let i = 0;
   let text = txt;
@@ -24,6 +26,10 @@ Pokemon.prototype.displayImg = function(){
 Pokemon.prototype.displayText = function(){
   // let textDisplay = $(".flavor-text-box");
   // console.log(`${this.flavortext}`)
+  timerArray.forEach(function(entry){
+    clearInterval(entry);
+  });
+  
   $(".flavor-text-box").text("");
   let i = 0;
   let flavorArray = Array.from(this.flavortext[0]);
@@ -37,7 +43,7 @@ Pokemon.prototype.displayText = function(){
   }
 
   let typewriterTimer = setInterval(function(){typewriter(flavorArray);}, 70);
-
+  timerArray.push(typewriterTimer);
 
 
   // $('.flavor-text-box').append(`<p>${this.flavortext[0]}</p>`);
