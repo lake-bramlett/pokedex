@@ -253,6 +253,14 @@ body {
 
   }
 
+  .test-block{
+    height: 416px;
+    width: 416px;
+    display: inline-block;
+    background-color: blue;
+    margin: 0px 10px;
+  }
+
   .flavor-text-box {
     width: 90%;
     margin: auto;
