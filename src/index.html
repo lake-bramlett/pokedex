@@ -11,9 +11,9 @@
         <div class="header">
           <div class="button-container-top">
             <div class="button"><div class="button-inner"></div></div>
-            <div class="tiny-button red"></div>
-            <div class="tiny-button yellow"></div>
-            <div class="tiny-button green"></div>
+            <div class="tiny-button red red-blink-off"></div>
+            <div class="tiny-button yellow yellow-blink-off"></div>
+            <div class="tiny-button green green-blink-off"></div>
           </div>
           <div class="divider-block">
             <div class="divider-block-top"></div>
@@ -21,7 +21,8 @@
           </div>
         </div>
         <div class="bezel">
-          <div class="display-screen">
+          <div class="display-screen screen-off">
+            <span class="list-display"></span>
             <div class="sprite-container"></div>
             <div class="flavor-text-box"></div>
           </div>
@@ -36,7 +37,6 @@
       <div class="bottom">
         <div class="bottom-left">
           <div class="bottom-left-top">
-            <div class="button"><div class="button-inner"></div></div>
             <div class="button-2 green">
               <select class="lang" name="">
                 <option value="en">EN</option>
@@ -51,9 +51,9 @@
             <div class="button-2 red"></div>
           </div>
           <div class="bottom-left-bottom">
-            <div class="sub-screen">
+            <div class="sub-screen screen-off">
               <div class="name-block">
-                <span>Name: </span><input type="text" name="" id="name"><span id="display"></span>
+                <span>Name: </span><input class="screen-off" type="text" name="" id="name"><span id="display"></span>
               </div>
               <div class="type-block">
                 <span>Type: </span>
@@ -117,6 +117,9 @@
             <div class="d-right"></div>
             <div class="d-down"></div>
           </div>
+        </div>
+        <div class="enter-button">
+          ENTER
         </div>
       </div>
     </div>
