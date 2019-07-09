@@ -2,6 +2,7 @@
 import {Pokemon} from "./pokemon-api-caller.js";
 import $ from "jquery";
 import "./display.js";
+import "./weight-height-calc.js";
 let userInput = "pikachu";
 let userLang = "en";
 let userPokemon = new Pokemon();
