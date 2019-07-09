@@ -1,18 +1,12 @@
 body {
-  background-color: #fc2243;
   margin: 0px;
   height: -webkit-fill-available;
   font-family: 'VT323', monospace;
   color: #587e8c;
+  background-color: #fc2243;
 }
 
-@media (min-width: 1000px) {
-  .pokedex {
-    display: none;
-  }
-}
 
-/*------------------------------*/
 .rotate-center {
   animation: rotate-center 0.6s ease;
 }
@@ -25,42 +19,54 @@ body {
     transform: rotate(360deg);
   }
 }
-/*----------------------------------*/
+
 
 @media (min-width: 600px) {
   .mobile-error {
     display: none;
   }
+
   .pokedex {
-    height: 520px;
+    height: 100%;
     width: 100%;
     background-color: #fc2243;
     margin: auto;
   }
 
   .top {
-
+    width: 100%;
+    height: 50%;
   }
 
   .header {
     background-color: #D50625;
-  }
+    height: 150px;
+    width: 100%;
+  };
 
-  .button-container-top {
+  div.button-container-top {
     display: inline-block;
     background-color: #D50625;
+    width: 40%;
+    height: 100%;
+  }
+
+  .button-container-top .tiny-button {
     position: relative;
-    bottom: 20px;
+    bottom: 50%;
+    left: 6%;
   }
 
   .button {
+    position: relative;
+    bottom: 13%;
+    margin-left: 7%;
     border-radius: 50%;
     background-color: white;
     height: 100px;
     width: 100px;
-    padding: 5px;
+    padding: 7px;
     display: inline-block;
-    margin-left: 40px;
 
   }
 
@@ -71,11 +77,6 @@ body {
     width: 50px;
     margin: 0px 5px;
 
-  }
-
-  .top .tiny-button {
-    position: relative;
-    bottom: 85px;
   }
 
   .button-inner {
@@ -133,45 +134,55 @@ body {
     background-color: #ffcf54;
   }
 
+  .grey {
+    background-color: #A6A2A2;
+  }
+
   .divider-block {
     height: 100%;
-    width: 600px;
-    position: relative;
-    right: -33px;
-    bottom: -10px;
+    width: 49%;
     display: inline-block;
   }
 
   .divider-block-top {
-    height: 100px;
+    height: 50%;
     width: 100%;
     background-color: #D50625;
   }
 
   .divider-block-bottom {
-    height: 100px;
+    height: 50%;
     width: 100%;
     background-color: #fc2243;
   }
 
   .bezel {
     background-color: #c1c1c1;
-    height: 800px;
-    padding: 2rem;
-    margin-top: 5rem;
+    height: 50%;
+    padding: 3% 3% 0% 3%;
+    margin-top: 4%;
     margin-left: 2rem;
     margin-right: 2rem;
     border-radius: 15px;
+  }
 
-
+  .bezel .tiny-button {
+    position: relative;
+    bottom: 5rem;
+    left: 1rem;
   }
 
   .bottom {
-    padding: 10px 20px 0px 20px;
+    width: 100%;
+    height: 50%;
   }
 
   .bottom-left, .bottom-right {
     display: inline-block;
+  }
+
+  .bottom-left {
+    margin-left: 2%;
   }
 
   .bottom-right {
@@ -233,7 +244,7 @@ body {
     position: relative;
     border-radius: 15px;
     width: 100%;
-    height: 600px;
+    height: 100%;
     margin: auto;
     display: block;
     text-align: center;
@@ -253,18 +264,24 @@ body {
 
   .sprite-container {
     width: 100%;
-    height: 65%;
+    height: 26rem;
+    overflow-x: scroll;
+    overflow-y: hidden;
+    white-space: nowrap;
+    -webkit-overflow-scrolling: touch;
+
   }
 
   .flavor-text-box {
-    width: 100%;
-    height: 35%;
+    width: 90%;
+    margin: auto;
+    height: 10rem;
     overflow: auto;
     font-size: 2.5rem;
   }
 
   img {
-    width: 60%
+    height: 100%;
   }
 
   .sub-screen {
@@ -280,26 +297,45 @@ body {
 
   .sub-screen input {
     border: none;
-    width: 80%;
+    width: 55%;
     font-size: 3rem;
     font-family: 'VT323', monospace;
     color: #587e8c;
+    -webkit-appearance: none;
   }
 
   .sub-screen select {
     display: inline-block;
     font-size: 3rem;
     font-family: 'VT323', monospace;
+    -webkit-appearance: none;
+    border-radius: 0;
+    border: none;
+  }
+
+  select.lang {
+    background-color: transparent;
+    -webkit-appearance: none;
+    border-radius: 0;
+    border: none;
   }
 
   .sub-screen select option {
     font-stretch: 0%;
     font-family: 'VT323', monospace;
     color: #587e8c;
+    -webkit-appearance: none;
+    border-radius: 0;
+    border: none;
   }
 
   .type-block select {
+    background-color: transparent;
     color: #587e8c;
+    width: 33%;
+    -webkit-appearance: none;
+    border-radius: 0;
+    border: none;
   }
 
   .screen-off {
@@ -343,15 +379,9 @@ body {
 
   .enter-button {
     text-align: center;
-    font-size: 3.5rem;
-    height: 5rem;
-    width: 75%;
-    padding-top: 20px;
+    font-size: 3rem;
     margin: auto;
     color: #ffffff;
     background-color: #A6A2A2;
     position: relative;
-    bottom: 2rem;
   }
-
-}
