@@ -246,10 +246,16 @@ body {
   .sprite-container {
     width: 100%;
     height: 26rem;
+    overflow-x: scroll;
+    overflow-y: hidden;
+    white-space: nowrap;
+    -webkit-overflow-scrolling: touch;
+
   }
 
   .flavor-text-box {
-    width: 100%;
+    width: 90%;
+    margin: auto;
     height: 10rem;
     overflow: auto;
     font-size: 2.5rem;
