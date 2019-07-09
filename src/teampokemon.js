@@ -6,6 +6,7 @@ import $ from "jquery";
 class PokemonTeam {
   constructor() {
     this.roster = [];
+    this.id = 0;
   }
 
   addPokemon(pokemonName) {
@@ -23,9 +24,11 @@ class PokemonTeam {
       request.send();
     });
 
-    promise.then(function(response) {
+    promise.then((response)=> {
       const body = JSON.parse(response);
-      currentTeam.roster.push(body.forms[0].name);
+      this.id++;
+      body.id = this.id;
+      this.roster.push(body);
     });
   }
 
@@ -33,12 +36,16 @@ class PokemonTeam {
 // ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 const currentTeam = new PokemonTeam();
 
-function removePokemon(pokemonName) {
+function removePokemon(id) {
+  // if (currentTeam.roster.includes(pokemonName)) {
+  //   currentTeam.roster.splice(i,1);
+  // }
+
   for (let i = 0; i < currentTeam.roster.length; i++) {
     console.log(currentTeam.roster.length);
-    console.log(currentTeam.roster[i] === pokemonName);
-    if (currentTeam.roster[i] === pokemonName) {
-      currentTeam.roster.splice(i,1);
+    console.log(currentTeam.roster[i].id === id);
+    if (currentTeam.roster[i].id === id) {
+      return currentTeam.roster.splice(i,1);
       // console.log(currentTeam.roster);
     } else {
       console.log( "That pokemon is not in your roster.");
@@ -46,11 +53,33 @@ function removePokemon(pokemonName) {
   }
 }
 
+currentTeam.addPokemon("pikachu");
+currentTeam.addPokemon("charmander");
 currentTeam.addPokemon("snorlax");
-currentTeam.addPokemon("snorlax");
+currentTeam.addPokemon("charizard");
 currentTeam.addPokemon("snorlax");
 currentTeam.addPokemon("charmander");
-currentTeam.addPokemon("beedrill");
+currentTeam.addPokemon("pikachu");
+currentTeam.addPokemon("charmander");
+currentTeam.addPokemon("snorlax");
+currentTeam.addPokemon("charizard");
+currentTeam.addPokemon("snorlax");
+currentTeam.addPokemon("charmander");
+currentTeam.addPokemon("pikachu");
+currentTeam.addPokemon("charmander");
+currentTeam.addPokemon("snorlax");
+currentTeam.addPokemon("charizard");
+currentTeam.addPokemon("snorlax");
+currentTeam.addPokemon("charmander");
+// currentTeam.addPokemon("beedrill");
 console.log(currentTeam);
-setTimeout(function(){removePokemon("snorlax")}, 2000);
+setTimeout(function(){removePokemon(1)}, 1000);
+setTimeout(function(){removePokemon(2)}, 1000);
+setTimeout(function(){removePokemon(3)}, 1000);
+setTimeout(function(){removePokemon(4)}, 1000);
+currentTeam.addPokemon("charizard");
+currentTeam.addPokemon("snorlax");
+currentTeam.addPokemon("charmander");
+setTimeout(function(){removePokemon(12)}, 1000);
+
 setTimeout(function(){console.log(currentTeam.roster)}, 7000);
