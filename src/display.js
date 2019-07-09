@@ -24,9 +24,33 @@ Pokemon.prototype.displayImg = function(){
 Pokemon.prototype.displayText = function(){
   // let textDisplay = $(".flavor-text-box");
   // console.log(`${this.flavortext}`)
+  $(".flavor-text-box").text("");
+  let i = 0;
+  let flavorArray = Array.from(this.flavortext[0]);
+  console.log(flavorArray);
+  let typewriter = function(inputArray){
+    $(".flavor-text-box").append(flavorArray[i]);
+    i++;
+    if (i === flavorArray.length) {
+      clearInterval(typewriterTimer);
+    }
+  }
 
-  $('.flavor-text-box').append(`<p>${this.flavortext[0]}</p>`);
+  let typewriterTimer = setInterval(function(){typewriter(flavorArray);}, 70);
+
+
+
+  // $('.flavor-text-box').append(`<p>${this.flavortext[0]}</p>`);
   // let flavorText = 'this is flavor text'
   // typeWriter(flavorText)
   // textDisplay.html(text)
 }
+
+
+$(document).ready(function(){
+  $(".button-inner").click(function(){
+    let userInput = $("#name").val();
+    let newPokemon = new Pokemon();
+    newPokemon.flavorTextLookup(userInput);
+  })
+})
