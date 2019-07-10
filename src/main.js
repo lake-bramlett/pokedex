@@ -18,6 +18,7 @@ let today = new Date();
 let pokemonIndex = parseInt((today.getTime()/8.64e+7)%151);
 let pokemonOfTheDay = new Pokemon();
 
+let pokemonSearch = new Pokemon();
 
 $(document).ready(function() {
 
@@ -35,7 +36,7 @@ $(document).ready(function() {
     event.preventDefault()
     console.log('form submitted');
 
-    let pokemonSearch = new Pokemon();
+
     let name = $('#name').val().toLowerCase();
     pokemonSearch.flavorTextLookup(name);
     console.log(pokemonSearch)
@@ -47,6 +48,7 @@ $(document).ready(function() {
   });
   $('.sprite-container').on('click', function(){
     console.log('clicked');
+    console.log(pokemonSearch);
     pokemonSearch.imgAnimation();
   });
 
@@ -62,11 +64,20 @@ $(document).ready(function() {
 
     // this controls the other type selector
   $(".type-2").change(function(){
+    console.log(this);
+    console.log(this.changed);
     $(".type-1").val("");
     let selectedType = $('.type-2 option:selected').val();
     let myPokemonList = new PokemonListByType();
     console.log("Type selection change");
     myPokemonList.pokemonTypeCall(`${selectedType}`);
   });
-  
+
+  $(".type-2 option").on('click',function(){
+      $(".type-2").trigger('change');
+  });
+
+
+
+
 });
