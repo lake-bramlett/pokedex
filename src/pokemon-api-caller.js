@@ -47,7 +47,6 @@ export class Pokemon{
 
       // this is where the front end functions are called
         this.displayImg();
-        // this.playSound();
         this.displayStats();
         this.imgAnimation();
       //

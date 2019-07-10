@@ -5,7 +5,7 @@ import "./pokemon-api-caller.js";
 import "./flavortext.js";
 import "./display.js";
 import "./pokemon-cries.js";
-import { Pokemon } from "./pokemon-api-caller.js";
+import { Pokemon, PokemonListByType } from "./pokemon-api-caller.js";
 import './randompokemon.js'
 import './teampokemon.js'
 import "./weight-height-calc.js";
@@ -29,12 +29,11 @@ $(document).ready(function() {
   setTimeout(function(){
     pokemonOfTheDay.flavorTextLookup(pokemonIndex);
   }, 5000)
-  
- 
 
   $('#name-form').submit(function(event){
     event.preventDefault()
     console.log('form submitted');
+
     let pokemonSearch = new Pokemon();
     let name = $('#name').val().toLowerCase();
     pokemonSearch.flavorTextLookup(name);
@@ -48,5 +47,26 @@ $(document).ready(function() {
   $('.sprite-container').on('click', function(){
     console.log('clicked');
     pokemonSearch.imgAnimation();
+  });
+
+
+    // this controls the type selection and list display
+  $(".type-1").change(function(){
+    $(".type-2").val("");
+    let selectedType = $('.type-1 option:selected').val();
+    let myPokemonList = new PokemonListByType();
+    console.log("Type selection change");
+    myPokemonList.pokemonTypeCall(`${selectedType}`);
+
+  });
+
+
+    // this controls the other type selector
+  $(".type-2").change(function(){
+    $(".type-1").val("");
+    let selectedType = $('.type-2 option:selected').val();
+    let myPokemonList = new PokemonListByType();
+    console.log("Type selection change");
+    myPokemonList.pokemonTypeCall(`${selectedType}`);
   });
 });
