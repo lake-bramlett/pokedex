@@ -7,17 +7,6 @@ import {talkingPokedex} from "./animations.js"
 // this controls timers for the displayText function
 const timerArray = [];
 
-let typeWriter = (txt) => {
-  let i = 0;
-  let text = txt;
-  let speed = 50;
-  console.log('got here' + `${this.flavortext}`)
-  if (i < txt.length) {
-    document.getElementById("#text").innerHTML += txt.charAt(i);
-    i++;
-    setTimeout(typeWriter, speed);
-  }
-}
 
 export function convertWeight(inputWeight){
   let newWeight = inputWeight*(0.1);
@@ -52,15 +41,17 @@ Pokemon.prototype.displayText = function(){
   $(".flavor-text-box").text("");
   let i = 0;
   let flavorArray = Array.from(this.flavortext[0]);
+
   let typewriter = function(inputArray){
     $(".flavor-text-box").append(flavorArray[i]);
     i++;
     talkingPokedex (flavorArray,i);
     if (i === flavorArray.length) {
       clearInterval(typewriterTimer);
-      setTimeout(function(){
+      let addTeamTimer = setTimeout(function(){
         $('.add-team-box').show();
-      }, 1000)
+      }, 1000);
+      timerArray.push(addTeamTimer);
     }
   }
 
@@ -93,7 +84,15 @@ PokemonListByType.prototype.displayList = function(){
   $(".list-display").text("");
   $(".display-screen .sprite-container").hide();
   $(".display-screen .flavor-text-box").hide();
-  $(".display-screen .add-team-box").hide();
+  $(".add-team-box").hide();
+
+  // this stops the set timeout from firing while lists are up
+  if (timerArray.length != 0) {
+    timerArray.forEach(function(arrayItem){
+      clearInterval(arrayItem);
+    });
+  }
+
   this.list.forEach((listItem)=>{
     $(".list-display").append(`<p class = "${listItem}">${listItem}</p>`);
     $(`.${listItem}`).click(()=>{
