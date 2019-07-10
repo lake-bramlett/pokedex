@@ -37,6 +37,7 @@ export class Pokemon{
       this.sprite = pokemonCalled.sprites.front_default;
 
       // pushing each type to the this.type array;
+      this.type = [];
       for (let i = 0; i < pokemonCalled.types.length; i++) {
           this.type.push(pokemonCalled.types[i].type.name);
       }
@@ -45,11 +46,11 @@ export class Pokemon{
 
 
       // this is where the front end functions are called
+        this.dPadSelection();
         this.displayImg();
         this.playSound();
         this.displayStats();
         this.imgAnimation();
-        this.dPadSelection();
       //
 
     })

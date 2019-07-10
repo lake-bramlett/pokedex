@@ -28,6 +28,7 @@ Pokemon.prototype.flavorTextLookup = function(userInput){
 
   flavorTextPromise.then(response => {
     let pokemonText = JSON.parse(response)
+    this.flavortext = [];
     // for (let i=0; i <pokemonText.flavor_text_entries.length; i++) {
     for (let i=0; i <pokemonText.flavor_text_entries.length; i++) {
       if (pokemonText.flavor_text_entries[i].language.name === `${userLang}`) {
@@ -48,7 +49,7 @@ Pokemon.prototype.flavorTextLookup = function(userInput){
 }// CLOSING flavor text
 
 //
-userPokemon.flavorTextLookup(userInput);
+// userPokemon.flavorTextLookup(userInput);
 // userPokemon.flavorTextLookup("pikachu");
 
 // let test = userPokemon.flavortext;
