@@ -15,6 +15,7 @@ import { bootUp,blinkingButtons,imgAnimation } from './animations.js';
 
 
 $(document).ready(function() {
+  $('.sprite-container').mouseover(console.log('mouseover'))
   setTimeout(function(){
     bootUp();
   }, 3000);
