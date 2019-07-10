@@ -18,10 +18,6 @@ let today = new Date();
 let pokemonIndex = parseInt((today.getTime()/8.64e+7)%151);
 export let displayPokemon = new Pokemon();
 
-let pokemonSearch = new Pokemon();
-
-
-
 $(document).ready(function() {
 
   // boot up animation
@@ -41,12 +37,6 @@ $(document).ready(function() {
     let name = $('#name').val().toLowerCase();
     userLang = $('#language').val();
     displayPokemon.flavorTextLookup(name);
-
-    console.log(pokemonSearch)
-    $('.display-screen').click(function(){
-      displayImg(pokemonSearch)
-      console.log('trying to display')
-    });
 
   });
   $('.sprite-container').on('click', function(){
