@@ -38,55 +38,55 @@ body {
 
 @keyframes swim {
   0% {
-    transform: translateY(150px);
+    transform: translateY(110px);
   }
   5% {
-    transform: translateY(100px) translateX(75px);
+    transform: translateY(90px) translateX(75px);
   }
   10% {
-    transform: translateY(150px);
+    transform: translateY(110px);
   }
   15% {
-    transform: translateY(100px) translateX(-75px);
+    transform: translateY(90px) translateX(-75px);
   }
   20% {
-    transform: translateY(150px);
+    transform: translateY(110px);
   }
   25% {
-    transform: translateY(100px) translateX(75px);
+    transform: translateY(90px) translateX(75px);
   }
   30% {
-    transform: translateY(150px);
+    transform: translateY(110px);
   }
   35% {
-    transform: translateY(100px) translateX(-75px);
+    transform: translateY(90px) translateX(-75px);
   }
   40% {
-    transform: translateY(150px);
+    transform: translateY(110px);
   }
   45% {
-    transform: translateY(100px) translateX(75px);
+    transform: translateY(90px) translateX(75px);
   }
   50% {
-    transform: translateY(150px);
+    transform: translateY(110px);
   }
   55% {
-    transform: translateY(100px) translateX(-75px);
+    transform: translateY(90px) translateX(-75px);
   }
   60% {
-    transform: translateY(150px);
+    transform: translateY(110px);
   }
   65% {
-    transform: translateY(100px) translateX(75px);
+    transform: translateY(90px) translateX(75px);
   }
   70% {
-    transform: translateY(150px);
+    transform: translateY(110px);
   }
   75% {
-    transform: translateY(100px) translateX(-75px);
+    transform: translateY(90px) translateX(-75px);
   }
   85% {
-    transform: translateY(150px);
+    transform: translateY(110px);
   }
   100% {
     transform: translateY(-80px);
@@ -453,7 +453,7 @@ body {
     height: 300px;
     width: 300px;
   }
-   
+
   .d-up, .d-left, .d-center, .d-right, .d-down {
     height: 95px;
     width: 95px;
