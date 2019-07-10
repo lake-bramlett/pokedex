@@ -18,7 +18,9 @@ $(document).ready(function() {
   setTimeout(function(){
     bootUp();
   }, 3000);
-  $('.d-center').click(function(){
+  $('#name-form').submit(function(event){
+    event.preventDefault()
+    console.log('form submitted');
     let pokemonSearch = new Pokemon();
     let name = $('#name').val().toLowerCase();
     pokemonSearch.flavorTextLookup(name);

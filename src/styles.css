@@ -638,6 +638,8 @@ body {
   }
 
   .enter-button {
+    padding: 0px;
+    font-family: 'VT323', monospace;
     text-align: center;
     font-size: 3rem;
     margin: auto;
