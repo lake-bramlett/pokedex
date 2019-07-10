@@ -516,7 +516,7 @@ body {
 
   .sprite-container {
     width: 100%;
-    height: 26rem;
+    height: 23rem;
     overflow-x: scroll;
     overflow-y: hidden;
     white-space: nowrap;
@@ -535,9 +535,17 @@ body {
   .flavor-text-box {
     width: 90%;
     margin: auto;
-    height: 10rem;
+    height: 8rem;
     overflow: auto;
     font-size: 2.5rem;
+  }
+
+  .add-team-box {
+    width: 90%;
+    margin: auto;
+    overflow: auto;
+    font-size: 2.5rem;
+    display: none;
   }
 
   img {
@@ -640,6 +648,15 @@ body {
   .enter-button {
     padding: 0px;
     font-family: 'VT323', monospace;
+    text-align: center;
+    font-size: 3rem;
+    margin: auto;
+    color: #ffffff;
+    background-color: #A6A2A2;
+    position: relative;
+  }
+
+  .team-button {
     text-align: center;
     font-size: 3rem;
     margin: auto;
