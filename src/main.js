@@ -10,15 +10,17 @@ import './randompokemon.js'
 import './teampokemon.js'
 import "./weight-height-calc.js";
 import { bootUp,blinkingButtons,imgAnimation } from './animations.js';
-import "./nextpokemon.js"
-
-
+import "./nextpokemon.js";
+import "./language.js";
+export let userLang = "en";
 // this controls the random pokemon of the day
 let today = new Date();
 let pokemonIndex = parseInt((today.getTime()/8.64e+7)%151);
 let pokemonOfTheDay = new Pokemon();
 
 let pokemonSearch = new Pokemon();
+
+
 
 $(document).ready(function() {
 
@@ -38,6 +40,11 @@ $(document).ready(function() {
 
 
     let name = $('#name').val().toLowerCase();
+    //-----------changes language from inside the submit-----------
+    userLang = $('#language').val();
+    // pokemonSearch.userLangChange(inputLanguage);
+    // pokemonSearch.flavorTextLookup(name);
+    //----------------------
     pokemonSearch.flavorTextLookup(name);
     console.log(pokemonSearch)
     $('.display-screen').click(function(){
@@ -70,15 +77,13 @@ $(document).ready(function() {
     console.log("Type selection change");
     myPokemonList.pokemonTypeCall(`${selectedType}`);
   });
-
+  
   $(".type-1").click(function(){
     $(".type-2").val("");
     let selectedType = $('.type-1 option:selected').val();
     let myPokemonList = new PokemonListByType();
     myPokemonList.pokemonTypeCall(`${selectedType}`);
   });
-
-
 
 
 });
