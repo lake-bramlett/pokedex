@@ -7,7 +7,8 @@ import "./display.js";
 import "./pokemon-cries.js";
 import { Pokemon, PokemonListByType } from "./pokemon-api-caller.js";
 import './randompokemon.js'
-import './teampokemon.js'
+import { PokemonTeam } from './teampokemon.js';
+import './teampokemon.js';
 import "./weight-height-calc.js";
 import { bootUp,blinkingButtons,imgAnimation } from './animations.js';
 import "./nextpokemon.js";
@@ -17,6 +18,7 @@ export let userLang = "en";
 let today = new Date();
 let pokemonIndex = parseInt((today.getTime()/8.64e+7)%151);
 export let displayPokemon = new Pokemon();
+export const currentTeam = new PokemonTeam();
 
 $(document).ready(function() {
 
@@ -42,6 +44,10 @@ $(document).ready(function() {
   $('.sprite-container').on('click', function(){
     console.log('clicked');
     console.log(displayPokemon.name);
+    if (currentTeam.roster.length < 6) {
+      currentTeam.addPokemon(displayPokemon.name);  
+    }
+    console.log(currentTeam.roster);
     displayPokemon.imgAnimation();
   });
 
@@ -62,6 +68,11 @@ $(document).ready(function() {
     let myPokemonList = new PokemonListByType();
     console.log("Type selection change");
     myPokemonList.pokemonTypeCall(`${selectedType}`);
+  });
+
+  //display team list
+  $('.team-button').click(function(){
+    currentTeam.displayTeam();
   });
 
 });
