@@ -64,8 +64,6 @@ $(document).ready(function() {
 
     // this controls the other type selector
   $(".type-2").change(function(){
-    console.log(this);
-    console.log(this.changed);
     $(".type-1").val("");
     let selectedType = $('.type-2 option:selected').val();
     let myPokemonList = new PokemonListByType();
@@ -73,8 +71,10 @@ $(document).ready(function() {
     myPokemonList.pokemonTypeCall(`${selectedType}`);
   });
 
-  $(".type-2 option").on('click',function(){
-      $(".type-2").trigger('change');
+  $(".type-1").click(function(){
+    $(".type-2").val("");
+    let selectedType = $('.type-1 option:selected').val();
+    let myPokemonList = new PokemonListByType();
   });
 
 

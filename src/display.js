@@ -45,9 +45,10 @@ Pokemon.prototype.displayText = function(){
     $(".flavor-text-box").append(flavorArray[i]);
     i++;
     talkingPokedex (flavorArray,i);
+    let addTeamTimer;
     if (i === flavorArray.length) {
       clearInterval(typewriterTimer);
-      let addTeamTimer = setTimeout(function(){
+      addTeamTimer = setTimeout(function(){
         $('.add-team-box').show();
       }, 1000)
       timerArray.push(addTeamTimer);
@@ -87,10 +88,12 @@ PokemonListByType.prototype.displayList = function(){
   $(".add-team-box").hide();
 
   // this stops the set timeout from firing while lists are up
-  timerArray.forEach(function(arrayItem){
-    clearInterval(arrayItem);
-  })
-  
+  if (timerArray.length != 0) {
+    timerArray.forEach(function(arrayItem){
+      clearInterval(arrayItem);
+    });
+  }
+
   this.list.forEach((listItem)=>{
     $(".list-display").append(`<p class = "${listItem}">${listItem}</p>`);
     $(`.${listItem}`).click(()=>{
