@@ -72,6 +72,8 @@ Pokemon.prototype.displayStats = function(){
   $(".type-1").val(`${this.type[0]}`);
   if(this.type[1] != undefined){
     $(".type-2").val(`${this.type[1]}`);
+  }else {
+    $(".type-2").val(undefined);
   }
 
   $(".height-block .output").text(convertHeight(`${this.height}`) + "m");
