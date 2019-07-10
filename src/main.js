@@ -7,6 +7,7 @@ import "./display.js";
 import "./pokemon-cries.js";
 import { Pokemon } from "./pokemon-api-caller.js";
 import './randompokemon.js'
+import './teampokemon.js'
 import "./weight-height-calc.js";
 import { bootUp,blinkingButtons,imgAnimation } from './animations.js';
 

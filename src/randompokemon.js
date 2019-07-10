@@ -22,9 +22,9 @@ Pokemon.prototype.randomPokemon = function(pokemonIndex){
 
   randomPokemonPromise.then(response => {
     let randomPokemon = JSON.parse(response)
-    console.log(Object.entries(randomPokemon));
-    console.log(randomPokemon.forms[0].name);
-    console.log(randomPokemon.forms[0].url);
+    // console.log(Object.entries(randomPokemon));
+    // console.log(randomPokemon.forms[0].name);
+    // console.log(randomPokemon.forms[0].url);
   $('#todaypokemon').text(randomPokemon.forms[0].name + " " + randomPokemon.forms[0].url);
   });
 }
