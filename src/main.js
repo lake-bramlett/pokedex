@@ -55,4 +55,14 @@ $(document).ready(function() {
     myPokemonList.pokemonTypeCall(`${selectedType}`);
 
   });
+
+
+    // this controls the other type selector
+  $(".type-2").change(function(){
+    $(".type-1").val("");
+    let selectedType = $('.type-2 option:selected').val();
+    let myPokemonList = new PokemonListByType();
+    console.log("Type selection change");
+    myPokemonList.pokemonTypeCall(`${selectedType}`);
+  });
 });
