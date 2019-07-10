@@ -48,6 +48,7 @@ export class Pokemon{
         this.displayImg();
         this.playSound();
         this.displayStats();
+        this.imgAnimation();
       //
 
     })
