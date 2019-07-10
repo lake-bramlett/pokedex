@@ -75,6 +75,7 @@ $(document).ready(function() {
     $(".type-2").val("");
     let selectedType = $('.type-1 option:selected').val();
     let myPokemonList = new PokemonListByType();
+    myPokemonList.pokemonTypeCall(`${selectedType}`);
   });
 
 
