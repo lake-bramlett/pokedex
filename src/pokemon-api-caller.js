@@ -41,6 +41,7 @@ export class Pokemon{
       for (let i = 0; i < pokemonCalled.types.length; i++) {
           this.type.push(pokemonCalled.types[i].type.name);
       }
+      this.type.reverse();
       this.height = pokemonCalled.height;
       this.weight = pokemonCalled.weight;
 
@@ -48,7 +49,6 @@ export class Pokemon{
       // this is where the front end functions are called
         this.dPadSelection();
         this.displayImg();
-        this.playSound();
         this.displayStats();
         this.imgAnimation();
       //

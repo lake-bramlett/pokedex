@@ -53,33 +53,3 @@ function removePokemon(id) {
   }
 }
 
-// currentTeam.addPokemon("pikachu");
-// currentTeam.addPokemon("charmander");
-// currentTeam.addPokemon("snorlax");
-// currentTeam.addPokemon("charizard");
-// currentTeam.addPokemon("snorlax");
-// currentTeam.addPokemon("charmander");
-// currentTeam.addPokemon("pikachu");
-// currentTeam.addPokemon("charmander");
-// currentTeam.addPokemon("snorlax");
-// currentTeam.addPokemon("charizard");
-// currentTeam.addPokemon("snorlax");
-// currentTeam.addPokemon("charmander");
-// currentTeam.addPokemon("pikachu");
-// currentTeam.addPokemon("charmander");
-// currentTeam.addPokemon("snorlax");
-// currentTeam.addPokemon("charizard");
-// currentTeam.addPokemon("snorlax");
-// currentTeam.addPokemon("charmander");
-// // currentTeam.addPokemon("beedrill");
-//
-// setTimeout(function(){removePokemon(1)}, 1000);
-// setTimeout(function(){removePokemon(2)}, 1000);
-// setTimeout(function(){removePokemon(3)}, 1000);
-// setTimeout(function(){removePokemon(4)}, 1000);
-// currentTeam.addPokemon("charizard");
-// currentTeam.addPokemon("snorlax");
-// currentTeam.addPokemon("charmander");
-// setTimeout(function(){removePokemon(12)}, 1000);
-//
-// setTimeout(function(){console.log(currentTeam.roster)}, 7000);

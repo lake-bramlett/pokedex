@@ -2,6 +2,7 @@ import $ from 'jquery'
 import "./weight-height-calc.js";
 import {flavorTextLookup} from "./flavortext.js";
 import {Pokemon, myPokemon, PokemonListByType} from "./pokemon-api-caller.js";
+import {talkingPokedex} from "./animations.js"
 
 // this controls timers for the displayText function
 const timerArray = [];
@@ -54,8 +55,12 @@ Pokemon.prototype.displayText = function(){
   let typewriter = function(inputArray){
     $(".flavor-text-box").append(flavorArray[i]);
     i++;
+    talkingPokedex (flavorArray,i);
     if (i === flavorArray.length) {
       clearInterval(typewriterTimer);
+      setTimeout(function(){
+        $('.add-team-box').show();
+      }, 1000)
     }
   }
 
@@ -68,10 +73,13 @@ Pokemon.prototype.displayText = function(){
 }
 
 Pokemon.prototype.displayStats = function(){
-  $("#name").val(`${this.name}`);
+  let nameCap = this.name.charAt(0).toUpperCase() + this.name.slice(1);
+  $("#name").val(`${nameCap}`);
   $(".type-1").val(`${this.type[0]}`);
   if(this.type[1] != undefined){
     $(".type-2").val(`${this.type[1]}`);
+  }else {
+    $(".type-2").val(undefined);
   }
 
   $(".height-block .output").text(convertHeight(`${this.height}`) + "m");
@@ -85,6 +93,7 @@ PokemonListByType.prototype.displayList = function(){
   $(".list-display").text("");
   $(".display-screen .sprite-container").hide();
   $(".display-screen .flavor-text-box").hide();
+  $(".display-screen .add-team-box").hide();
   this.list.forEach((listItem)=>{
     $(".list-display").append(`<p class = "${listItem}">${listItem}</p>`);
     $(`.${listItem}`).click(()=>{
@@ -98,18 +107,5 @@ PokemonListByType.prototype.displayList = function(){
 
 // just for testing
 $(document).ready(function(){
-  $(".type-1").change(function(){
-    $(".type-2").val("");
-    console.log("working");
-    let selectedType = $('.type-1 option:selected').val();
-    console.log(selectedType);
-    // let userInput = $("#name").val();
-    // let newPokemon = new Pokemon();
-    // newPokemon.flavorTextLookup(userInput);
-    let myPokemonList = new PokemonListByType();
 
-    myPokemonList.pokemonTypeCall(`${selectedType}`);
-    console.log(myPokemonList);
-
-  });
 });

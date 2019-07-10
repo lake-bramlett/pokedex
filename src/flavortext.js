@@ -48,9 +48,7 @@ Pokemon.prototype.flavorTextLookup = function(userInput){
 
 }// CLOSING flavor text
 
-//
-userPokemon.flavorTextLookup(userInput);
-// userPokemon.flavorTextLookup("pikachu");
+
 
 // let test = userPokemon.flavortext;
 // console.log(test);
