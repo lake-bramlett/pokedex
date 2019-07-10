@@ -2,6 +2,7 @@ import $ from 'jquery'
 import "./weight-height-calc.js";
 import {flavorTextLookup} from "./flavortext.js";
 import {Pokemon, myPokemon, PokemonListByType} from "./pokemon-api-caller.js";
+import {talkingPokedex} from "./animations.js"
 
 // this controls timers for the displayText function
 const timerArray = [];
@@ -54,6 +55,7 @@ Pokemon.prototype.displayText = function(){
   let typewriter = function(inputArray){
     $(".flavor-text-box").append(flavorArray[i]);
     i++;
+    talkingPokedex (flavorArray,i);
     if (i === flavorArray.length) {
       clearInterval(typewriterTimer);
     }

@@ -1,5 +1,6 @@
 import $ from "jquery";
 import {Pokemon} from "./pokemon-api-caller.js";
+import "./display.js";
 
 
 export function bootUp () {
@@ -9,8 +10,12 @@ export function bootUp () {
   blinkingButtons();
 };
 
-export function talkingPokedex () {
-
+export function talkingPokedex (flavorArray,i) {
+  if (flavorArray[i] === ' ') {
+    $('.button .button-inner').toggleClass('pokedex-off pokedex-on');
+  } else if (i === flavorArray.length) {
+    $('.button .button-inner').toggleClass('pokedex-off pokedex-on');
+  }
 };
 
 export function blinkingButtons () {
@@ -24,6 +29,8 @@ export function blinkingButtons () {
     $('.button-container-top .tiny-button.green').toggleClass('green-blink-off green-blink-on');
   }, 4000);
 };
+
+
 
 Pokemon.prototype.imgAnimation = function () {
   switch(this.type[0] || this.type[1]){
