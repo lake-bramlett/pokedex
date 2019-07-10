@@ -16,11 +16,7 @@ export let userLang = "en";
 // this controls the random pokemon of the day
 let today = new Date();
 let pokemonIndex = parseInt((today.getTime()/8.64e+7)%151);
-let pokemonOfTheDay = new Pokemon();
-
-let pokemonSearch = new Pokemon();
-
-
+export let displayPokemon = new Pokemon();
 
 $(document).ready(function() {
 
@@ -31,32 +27,22 @@ $(document).ready(function() {
 
   // this delays the load of the initial pokemon
   setTimeout(function(){
-    pokemonOfTheDay.flavorTextLookup(pokemonIndex);
+    displayPokemon.flavorTextLookup(pokemonIndex);
   }, 5000)
 
   $('#name-form').submit(function(event){
     event.preventDefault()
     console.log('form submitted');
 
-
     let name = $('#name').val().toLowerCase();
-    //-----------changes language from inside the submit-----------
     userLang = $('#language').val();
-    // pokemonSearch.userLangChange(inputLanguage);
-    // pokemonSearch.flavorTextLookup(name);
-    //----------------------
-    pokemonSearch.flavorTextLookup(name);
-    console.log(pokemonSearch)
-    $('.display-screen').click(function(){
-      displayImg(pokemonSearch)
-      console.log('trying to display')
-    });
+    displayPokemon.flavorTextLookup(name);
 
   });
   $('.sprite-container').on('click', function(){
     console.log('clicked');
-    console.log(pokemonSearch);
-    pokemonSearch.imgAnimation();
+    console.log(displayPokemon.name);
+    displayPokemon.imgAnimation();
   });
 
     // this controls the type selection and list display
@@ -77,13 +63,5 @@ $(document).ready(function() {
     console.log("Type selection change");
     myPokemonList.pokemonTypeCall(`${selectedType}`);
   });
-  
-  $(".type-1").click(function(){
-    $(".type-2").val("");
-    let selectedType = $('.type-1 option:selected').val();
-    let myPokemonList = new PokemonListByType();
-    myPokemonList.pokemonTypeCall(`${selectedType}`);
-  });
-
 
 });
