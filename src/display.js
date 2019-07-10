@@ -41,18 +41,17 @@ Pokemon.prototype.displayText = function(){
   $(".flavor-text-box").text("");
   let i = 0;
   let flavorArray = Array.from(this.flavortext[0]);
+
   let typewriter = function(inputArray){
     $(".flavor-text-box").append(flavorArray[i]);
     i++;
     talkingPokedex (flavorArray,i);
-    let addTeamTimer;
     if (i === flavorArray.length) {
       clearInterval(typewriterTimer);
-      addTeamTimer = setTimeout(function(){
+      let addTeamTimer = setTimeout(function(){
         $('.add-team-box').show();
-      }, 1000)
+      }, 1000);
       timerArray.push(addTeamTimer);
-      addTeamTimer();
     }
   }
 
