@@ -33,15 +33,29 @@ export function blinkingButtons () {
 
 
 Pokemon.prototype.imgAnimation = function () {
-  switch(this.type[0] || this.type[1]){
+  switch(this.type[0] || this.type[1]){ //main type is run first
     case 'fire':
+      $('.sprite-container img').addClass('shake-fire')
+      setTimeout(function(){$('.sprite-container img').removeClass('shake-fire')},1000)
+      break;
     case 'dragon':
+      $('.sprite-container img').addClass('shake-dragon')
+      setTimeout(function(){$('.sprite-container img').removeClass('shake-dragon')},1000)
+      break;
     case 'bug':
+    case 'grass':
+      $('.sprite-container img').addClass('shake-grass')
+      setTimeout(function(){$('.sprite-container img').removeClass('shake-grass')},1000)
+      break;
     case 'water':
     case 'ice':
-    $('.sprite-container img').addClass('shake')
-    setTimeout(function(){$('.sprite-container img').removeClass('shake')},1000)
-    break;
+      $('.sprite-container img').addClass('swim')
+      setTimeout(function(){$('.sprite-container img').removeClass('swim')},1000)
+      break;
+    case 'normal':
+      $('.sprite-container img').addClass('shake')
+      setTimeout(function(){$('.sprite-container img').removeClass('shake')},1000)
+      break;
     case 'flying':
       $('.sprite-container img').addClass('slide-from-top')
       setTimeout(function(){$('.sprite-container img').removeClass('slide-from-top')},1000)
@@ -51,6 +65,9 @@ Pokemon.prototype.imgAnimation = function () {
       setTimeout(function(){$('.sprite-container img').removeClass('slide-from-bottom')},1000)
       break;
     case 'poison':
+      $('.sprite-container img').addClass('shake-poison')
+      setTimeout(function(){$('.sprite-container img').removeClass('shake-poison')},1000)
+      break;
     case 'ghost':
       $('.sprite-container img').addClass('shake-ghost')
       setTimeout(function(){$('.sprite-container img').removeClass('shake-ghost')},1000)
@@ -59,6 +76,7 @@ Pokemon.prototype.imgAnimation = function () {
       $('.sprite-container img').addClass('zap')
       setTimeout(function(){$('.sprite-container img').removeClass('zap')},1000)
       break;
+    case 'rock':
     case 'fighting':
       $('.sprite-container img').addClass('slide-fwd')
       setTimeout(function(){$('.sprite-container img').removeClass('slide-fwd')},1000)

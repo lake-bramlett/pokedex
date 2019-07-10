@@ -58,6 +58,9 @@ Pokemon.prototype.displayText = function(){
     talkingPokedex (flavorArray,i);
     if (i === flavorArray.length) {
       clearInterval(typewriterTimer);
+      setTimeout(function(){
+        $('.add-team-box').show();
+      }, 1000)
     }
   }
 
@@ -90,6 +93,7 @@ PokemonListByType.prototype.displayList = function(){
   $(".list-display").text("");
   $(".display-screen .sprite-container").hide();
   $(".display-screen .flavor-text-box").hide();
+  $(".display-screen .add-team-box").hide();
   this.list.forEach((listItem)=>{
     $(".list-display").append(`<p class = "${listItem}">${listItem}</p>`);
     $(`.${listItem}`).click(()=>{

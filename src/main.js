@@ -19,6 +19,7 @@ let pokemonOfTheDay = new Pokemon();
 
 
 $(document).ready(function() {
+
   // boot up animation
   setTimeout(function(){
     bootUp();
@@ -29,7 +30,10 @@ $(document).ready(function() {
     pokemonOfTheDay.flavorTextLookup(pokemonIndex);
   }, 5000)
 
-  $('.d-center').click(function(){
+  $('#name-form').submit(function(event){
+    event.preventDefault()
+    console.log('form submitted');
+
     let pokemonSearch = new Pokemon();
     let name = $('#name').val().toLowerCase();
     pokemonSearch.flavorTextLookup(name);
