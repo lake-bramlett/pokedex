@@ -26,7 +26,40 @@ export function blinkingButtons () {
 };
 
 Pokemon.prototype.imgAnimation = function () {
-  $('.sprite-container img').addClass('rotate-center')
-  setTimeout(function(){$('.sprite-container img').removeClass('rotate-center')},1000)
+  switch(this.type[0] || this.type[1]){
+    case 'fire':
+    case 'dragon':
+    case 'bug':
+    case 'water':
+    case 'ice':
+    $('.sprite-container img').addClass('shake')
+    setTimeout(function(){$('.sprite-container img').removeClass('shake')},1000)
+    break;
+    case 'flying':
+      $('.sprite-container img').addClass('slide-from-top')
+      setTimeout(function(){$('.sprite-container img').removeClass('slide-from-top')},1000)
+      break;
+    case 'ground':
+      $('.sprite-container img').addClass('slide-from-bottom')
+      setTimeout(function(){$('.sprite-container img').removeClass('slide-from-bottom')},1000)
+      break;
+    case 'poison':
+    case 'ghost':
+      $('.sprite-container img').addClass('shake-ghost')
+      setTimeout(function(){$('.sprite-container img').removeClass('shake-ghost')},1000)
+      break;
+    case 'electric':
+      $('.sprite-container img').addClass('zap')
+      setTimeout(function(){$('.sprite-container img').removeClass('zap')},1000)
+      break;
+    case 'fighting':
+      $('.sprite-container img').addClass('slide-fwd')
+      setTimeout(function(){$('.sprite-container img').removeClass('slide-fwd')},1000)
+      break;
+    default:
+      $('.sprite-container img').addClass('rotate-center')
+      setTimeout(function(){$('.sprite-container img').removeClass('rotate-center')},1000)
+      break;
+  }
   this.playSound();
 }
