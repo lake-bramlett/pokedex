@@ -10,12 +10,13 @@ import './randompokemon.js'
 import './teampokemon.js'
 import "./weight-height-calc.js";
 import { bootUp,blinkingButtons,imgAnimation } from './animations.js';
+import "./nextpokemon.js"
+
 
 // this controls the random pokemon of the day
 let today = new Date();
 let pokemonIndex = parseInt((today.getTime()/8.64e+7)%151);
 let pokemonOfTheDay = new Pokemon();
-
 
 
 $(document).ready(function() {
@@ -49,7 +50,6 @@ $(document).ready(function() {
     pokemonSearch.imgAnimation();
   });
 
-
     // this controls the type selection and list display
   $(".type-1").change(function(){
     $(".type-2").val("");
@@ -60,7 +60,6 @@ $(document).ready(function() {
 
   });
 
-
     // this controls the other type selector
   $(".type-2").change(function(){
     $(".type-1").val("");
@@ -69,4 +68,5 @@ $(document).ready(function() {
     console.log("Type selection change");
     myPokemonList.pokemonTypeCall(`${selectedType}`);
   });
+  
 });

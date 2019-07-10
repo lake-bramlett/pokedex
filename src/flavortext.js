@@ -26,28 +26,28 @@ Pokemon.prototype.flavorTextLookup = function(userInput){
     request.send();
   });
 
-
   flavorTextPromise.then(response => {
     let pokemonText = JSON.parse(response)
+    this.flavortext = []; // This is refreshing message whenever we click for the next/previous pokemon display
     // for (let i=0; i <pokemonText.flavor_text_entries.length; i++) {
     for (let i=0; i <pokemonText.flavor_text_entries.length; i++) {
       if (pokemonText.flavor_text_entries[i].language.name === `${userLang}`) {
         this.flavortext.push(pokemonText.flavor_text_entries[i].flavor_text);
         result.push(pokemonText.flavor_text_entries[i].flavor_text);
       }
-
     }
-
     this.displayText();
-
-
-
   // $('#pokenow').text(userPokemon.flavortext[Math.floor((Math.random() * userPokemon.flavortext.length ))]);
     // return result[0]
   });
+
+  // nextPokemonPromise.then(response => {
+  //   console.log(this.pokemonText);
+  //   console.log(this.pokemonText.id);
+  // });
+
 }// CLOSING flavor text
 
-//
 
 
 // let test = userPokemon.flavortext;
