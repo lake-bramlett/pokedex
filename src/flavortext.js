@@ -4,7 +4,7 @@ import $ from "jquery";
 import "./display.js";
 import "./weight-height-calc.js";
 let userInput = "pikachu";
-let userLang = "en";
+import { userLang } from './main.js'
 let userPokemon = new Pokemon();
 let result = [];
 
