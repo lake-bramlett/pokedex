@@ -26,7 +26,6 @@ Pokemon.prototype.flavorTextLookup = function(userInput){
     request.send();
   });
 
-
   flavorTextPromise.then(response => {
     let pokemonText = JSON.parse(response)
     // for (let i=0; i <pokemonText.flavor_text_entries.length; i++) {
@@ -35,20 +34,22 @@ Pokemon.prototype.flavorTextLookup = function(userInput){
         this.flavortext.push(pokemonText.flavor_text_entries[i].flavor_text);
         result.push(pokemonText.flavor_text_entries[i].flavor_text);
       }
-
     }
-
     this.displayText();
-
-
-
   // $('#pokenow').text(userPokemon.flavortext[Math.floor((Math.random() * userPokemon.flavortext.length ))]);
     // return result[0]
   });
+
+  // nextPokemonPromise.then(response => {
+  //   console.log(this.pokemonText);
+  //   console.log(this.pokemonText.id);
+  // });
+
 }// CLOSING flavor text
 
 //
 userPokemon.flavorTextLookup(userInput);
+// userPokemon.flavorTextLookup("pikachu");
 
 // let test = userPokemon.flavortext;
 // console.log(test);

@@ -10,7 +10,7 @@ import './randompokemon.js'
 import './teampokemon.js'
 import "./weight-height-calc.js";
 import { bootUp,blinkingButtons,imgAnimation } from './animations.js';
-
+import "./nextpokemon.js"
 
 
 
