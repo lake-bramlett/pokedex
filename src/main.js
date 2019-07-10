@@ -20,7 +20,7 @@ $(document).ready(function() {
   }, 3000);
   $('.d-center').click(function(){
     let pokemonSearch = new Pokemon();
-    let name = $('#name').val();
+    let name = $('#name').val().toLowerCase();
     pokemonSearch.flavorTextLookup(name);
     console.log(pokemonSearch)
     $('.display-screen').click(function(){
