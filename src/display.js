@@ -2,7 +2,10 @@ import $ from 'jquery'
 import "./weight-height-calc.js";
 import {flavorTextLookup} from "./flavortext.js";
 import {Pokemon, myPokemon, PokemonListByType} from "./pokemon-api-caller.js";
-import {talkingPokedex} from "./animations.js"
+import {talkingPokedex} from "./animations.js";
+import {displayPokemon} from './main.js';
+
+
 
 // this controls timers for the displayText function
 const timerArray = [];
@@ -97,9 +100,9 @@ PokemonListByType.prototype.displayList = function(){
   this.list.forEach((listItem)=>{
     $(".list-display").append(`<p class = "${listItem}">${listItem}</p>`);
     $(`.${listItem}`).click(()=>{
-      let listPokemon = new Pokemon();
-      console.log(listPokemon);
-      listPokemon.flavorTextLookup(`${listItem}`);
+      displayPokemon.name = listItem;
+      console.log(displayPokemon.name);
+      displayPokemon.flavorTextLookup(`${listItem}`);
 
      });
   });

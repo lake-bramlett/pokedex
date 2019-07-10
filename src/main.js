@@ -16,7 +16,7 @@ import "./nextpokemon.js"
 // this controls the random pokemon of the day
 let today = new Date();
 let pokemonIndex = parseInt((today.getTime()/8.64e+7)%151);
-let pokemonOfTheDay = new Pokemon();
+export let displayPokemon = new Pokemon();
 
 
 $(document).ready(function() {
@@ -28,16 +28,15 @@ $(document).ready(function() {
 
   // this delays the load of the initial pokemon
   setTimeout(function(){
-    pokemonOfTheDay.flavorTextLookup(pokemonIndex);
+    displayPokemon.flavorTextLookup(pokemonIndex);
   }, 5000)
 
   $('#name-form').submit(function(event){
     event.preventDefault()
     console.log('form submitted');
 
-    let pokemonSearch = new Pokemon();
     let name = $('#name').val().toLowerCase();
-    pokemonSearch.flavorTextLookup(name);
+    displayPokemon.flavorTextLookup(name);
     console.log(pokemonSearch)
     $('.display-screen').click(function(){
       displayImg(pokemonSearch)
@@ -47,7 +46,8 @@ $(document).ready(function() {
   });
   $('.sprite-container').on('click', function(){
     console.log('clicked');
-    pokemonSearch.imgAnimation();
+    console.log(displayPokemon.name);
+    displayPokemon.imgAnimation();
   });
 
     // this controls the type selection and list display
@@ -68,5 +68,5 @@ $(document).ready(function() {
     console.log("Type selection change");
     myPokemonList.pokemonTypeCall(`${selectedType}`);
   });
-  
+
 });
