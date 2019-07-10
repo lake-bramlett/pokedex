@@ -103,18 +103,5 @@ PokemonListByType.prototype.displayList = function(){
 
 // just for testing
 $(document).ready(function(){
-  $(".type-1").change(function(){
-    $(".type-2").val("");
-    console.log("working");
-    let selectedType = $('.type-1 option:selected').val();
-    console.log(selectedType);
-    // let userInput = $("#name").val();
-    // let newPokemon = new Pokemon();
-    // newPokemon.flavorTextLookup(userInput);
-    let myPokemonList = new PokemonListByType();
 
-    myPokemonList.pokemonTypeCall(`${selectedType}`);
-    console.log(myPokemonList);
-
-  });
 });
