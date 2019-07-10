@@ -44,7 +44,9 @@ $(document).ready(function() {
   $('.sprite-container').on('click', function(){
     console.log('clicked');
     console.log(displayPokemon.name);
-    currentTeam.addPokemon(displayPokemon.name);
+    if (currentTeam.roster.length < 6) {
+      currentTeam.addPokemon(displayPokemon.name);  
+    }
     console.log(currentTeam.roster);
     displayPokemon.imgAnimation();
   });
