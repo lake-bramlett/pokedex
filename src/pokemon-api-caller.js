@@ -40,6 +40,7 @@ export class Pokemon{
       for (let i = 0; i < pokemonCalled.types.length; i++) {
           this.type.push(pokemonCalled.types[i].type.name);
       }
+      this.type.reverse();
       this.height = pokemonCalled.height;
       this.weight = pokemonCalled.weight;
 
