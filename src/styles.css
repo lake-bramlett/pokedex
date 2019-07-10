@@ -1,50 +1,166 @@
 body {
-  background-color: #fc2243;
   margin: 0px;
   height: -webkit-fill-available;
   font-family: 'VT323', monospace;
+  color: #587e8c;
+  background-color: #fc2243;
 }
 
-@media (min-width: 1000px) {
-  .pokedex {
-    display: none;
+.rotate-center {
+  animation: rotate-center 0.6s ease;
+}
+
+@keyframes rotate-center {
+  0% {
+    transform: rotate(0);
+  }
+  100% {
+    transform: rotate(360deg);
   }
 }
 
-@media (min-width: 600px) {
-  .mobile-error {
-    display: none;
+.slide-from-bottom {
+	animation: slide-from-bottom 0.5s cubic-bezier(0.600, -0.280, 0.735, 0.045) forwards;
+}
+
+@keyframes slide-from-bottom {
+  0% {
+    transform: translateY(0);
   }
+  100% {
+    transform: translateY(-100px);
+  }
+}
+
+.slide-from-top {
+	animation: slide-from-top 0.5s cubic-bezier(0.250, 0.460, 0.450, 0.940) reverse both;
+}
+
+@keyframes slide-from-top {
+  0% {
+    transform: translateY(0px);
+  }
+  100% {
+    transform: translateY(-200px);
+  }
+}
+
+.shake {
+  animation: shake 0.5s;
+  animation-iteration-count: 1;
+}
+@keyframes shake {
+  0% { transform: translate(10px, 10px) rotate(0deg); }
+  20% { transform: translate(-3px, 0px) rotate(-10deg); }
+  40% { transform: translate(1px, -1px) rotate(10deg); }
+  60% { transform: translate(-3px, 1px) rotate(-10deg); }
+  80% { transform: translate(-1px, -1px) rotate(10deg); }
+  100% { transform: translate(1px, -2px) rotate(0deg); }
+}
+
+.shake-ghost {
+  animation: shake-ghost 0.5s;
+  animation-iteration-count: 1;
+}
+@keyframes shake-ghost {
+  0% { transform: translate(10px, 10px) rotate(0deg); }
+  20% { transform: translate(-3px, 0px) rotate(-10deg); }
+  40% {
+    transform: translate(1px, -1px) rotate(10deg);
+    opacity: 0;
+  }
+  60% {
+    transform: translate(-3px, 1px) rotate(-10deg);
+    opacity: 0;
+  }
+  80% {
+    transform: translate(-1px, -1px) rotate(10deg);
+    opacity: 0;
+  }
+  100% { transform: translate(1px, -2px) rotate(0deg); }
+}
+
+
+.zap {
+  animation: zap 0.2s;
+  animation-iteration-count: 2;
+}
+@keyframes zap {
+  0% {
+    transform: translateY(80px) translateX(80px);
+    /* transform: translateX(100px); */
+  }
+  25% {
+    transform: translateY(-80px) translateX(-80px);
+    /* transform: translateX(-100px); */
+  }
+  50% {
+    transform: translateY(80px) translateX(0px);
+    /* transform: translateX(0px); */
+  }
+  100% {
+    transform: translateY(0px) translateX(80px);
+    /* transform: translateX(-100px); */
+  }
+}
+
+.slide-fwd {
+	animation: slide-fwd 0.45s cubic-bezier(0.250, 0.460, 0.450, 0.940) both;
+}
+
+@keyframes slide-fwd {
+  0% {
+    /* for some reason, translateZ doesnt work */
+    transform: translateZ(0) translateY(0);
+  }
+  100% {
+    transform: translateZ(160px) translateY(100px);
+  }
+}
+
+
+
   .pokedex {
-    height: 520px;
+    height: 100%;
     width: 100%;
     background-color: #fc2243;
     margin: auto;
   }
 
   .top {
-
+    width: 100%;
+    height: 50%;
   }
 
   .header {
     background-color: #D50625;
-  }
+    height: 150px;
+    width: 100%;
+  };
 
-  .button-container-top {
+  div.button-container-top {
     display: inline-block;
     background-color: #D50625;
+    width: 40%;
+    height: 100%;
+  }
+
+  .button-container-top .tiny-button {
     position: relative;
-    bottom: 20px;
+    bottom: 50%;
+    left: 6%;
   }
 
   .button {
+    position: relative;
+    bottom: 13%;
+    margin-left: 7%;
     border-radius: 50%;
     background-color: white;
     height: 100px;
     width: 100px;
-    padding: 5px;
+    padding: 7px;
     display: inline-block;
-    margin-left: 40px;
 
   }
 
@@ -57,11 +173,6 @@ body {
 
   }
 
-  .top .tiny-button {
-    position: relative;
-    bottom: 85px;
-  }
-
   .button-inner {
     border-radius: 50%;
     background-color: #71cdf4;
@@ -72,7 +183,7 @@ body {
 
   .button-2 {
     text-align: center;
-    border-radius: 25%;
+    border-radius: 25px;
     height: 50px;
     width: 200px;
     display: inline-block;
@@ -117,49 +228,62 @@ body {
     background-color: #ffcf54;
   }
 
+  .grey {
+    background-color: #A6A2A2;
+  }
+
   .divider-block {
     height: 100%;
-    width: 600px;
-    position: relative;
-    right: -33px;
-    bottom: -10px;
+    width: 49%;
     display: inline-block;
   }
 
   .divider-block-top {
-    height: 100px;
+    height: 50%;
     width: 100%;
     background-color: #D50625;
   }
 
   .divider-block-bottom {
-    height: 100px;
+    height: 50%;
     width: 100%;
     background-color: #fc2243;
   }
 
   .bezel {
     background-color: #c1c1c1;
-    height: 800px;
-    padding: 2rem;
-    margin-top: 5rem;
+    height: 50%;
+    padding: 3% 3% 0% 3%;
+    margin-top: 4%;
     margin-left: 2rem;
     margin-right: 2rem;
     border-radius: 15px;
+  }
 
-
+  .bezel .tiny-button {
+    position: relative;
+    bottom: 5rem;
+    left: 1rem;
   }
 
   .bottom {
-    padding: 10px 20px 0px 20px;
+    width: 100%;
+    height: 50%;
   }
 
   .bottom-left, .bottom-right {
     display: inline-block;
   }
 
+  .bottom-left {
+    margin-left: 2%;
+  }
+
   .bottom-right {
     padding-left: 30px;
+    position: relative;
+    bottom: 3rem;
+    margin-bottom: 2rem;
   }
 
   .bottom-left-top {
@@ -214,31 +338,56 @@ body {
     position: relative;
     border-radius: 15px;
     width: 100%;
-    height: 600px;
+    height: 100%;
     margin: auto;
-    background-color: #e5f6fc;
     display: block;
     text-align: center;
   }
 
+  .list-display {
+    overflow: auto;
+    height: 576px;
+    top: 1rem;
+    font-size: 2.5rem;
+    margin: auto;
+    width: 90%;
+    overflow: auto;
+    left: 2.6rem;
+  }
+
   .sprite-container {
     width: 100%;
-    height: 65%;
+    height: 26rem;
+    overflow-x: scroll;
+    overflow-y: hidden;
+    white-space: nowrap;
+    -webkit-overflow-scrolling: touch;
+
+  }
+
+  .test-block{
+    height: 416px;
+    width: 416px;
+    display: inline-block;
+    background-color: blue;
+    margin: 0px 10px;
   }
 
   .flavor-text-box {
-    width: 100%;
-    height: 35%;
+    width: 90%;
+    margin: auto;
+    height: 10rem;
+    overflow: auto;
+    font-size: 2.5rem;
   }
 
   img {
-    width: 60%
+    height: 100%;
   }
 
   .sub-screen {
     height: 225px;
     width: 530px;
-    background-color: #e5f6fc;
     border-radius: 25px;
     padding: 2rem;
   }
@@ -248,23 +397,96 @@ body {
   }
 
   .sub-screen input {
-    background-color: #e5f6fc;
     border: none;
-    width: 80%;
+    width: 55%;
     font-size: 3rem;
     font-family: 'VT323', monospace;
+    color: #587e8c;
+    -webkit-appearance: none;
   }
 
   .sub-screen select {
     display: inline-block;
     font-size: 3rem;
     font-family: 'VT323', monospace;
+    -webkit-appearance: none;
+    border-radius: 0;
+    border: none;
+  }
+
+  select.lang {
+    background-color: transparent;
+    -webkit-appearance: none;
+    border-radius: 0;
+    border: none;
   }
 
   .sub-screen select option {
     font-stretch: 0%;
     font-family: 'VT323', monospace;
+    color: #587e8c;
+    -webkit-appearance: none;
+    border-radius: 0;
+    border: none;
   }
 
+  .type-block select {
+    background-color: transparent;
+    color: #587e8c;
+    width: 35%;
+    -webkit-appearance: none;
+    border-radius: 0;
+    border: none;
+  }
 
-}
+  .screen-off {
+    background-color: #587e8c;
+  }
+
+  .screen-on {
+    transition: background-color 1.5s ease;
+    background-color: #e5f6fc;
+  }
+
+  .red-blink-on {
+    transition: background-color 1s ease;
+    background-color: #ff0400;
+  }
+
+  .red-blink-off {
+    transition: background-color 1s ease;
+    background-color: #b50020;
+  }
+
+  .yellow-blink-on {
+    transition: background-color 1s ease;
+    background-color: #ffee04;
+  }
+
+  .yellow-blink-off {
+    transition: background-color 1s ease;
+    background-color: #c2ac4a;
+  }
+
+  .green-blink-on {
+    transition: background-color 1s ease;
+    background-color: #5bf574;
+  }
+
+  .green-blink-off {
+    transition: background-color 1s ease;
+    background-color: #58bb68;
+  }
+
+  .enter-button {
+    text-align: center;
+    font-size: 3rem;
+    margin: auto;
+    color: #ffffff;
+    background-color: #A6A2A2;
+    position: relative;
+  }
+
+  .pokedex-off {
+    background-color: #4d859c;
+  }
