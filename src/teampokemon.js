@@ -1,9 +1,10 @@
 import {Pokemon} from "./pokemon-api-caller.js";
 import $ from "jquery";
+import {displayPokemon,currentTeam} from './main.js';
 
 // let pokemonName = "charmander"
 // ~~~~~~~~~~~~~~~ construction of class and calling that class ~~~~~~~~~~~~~~~~
-class PokemonTeam {
+export class PokemonTeam {
   constructor() {
     this.roster = [];
     this.id = 0;
@@ -32,9 +33,26 @@ class PokemonTeam {
     });
   }
 
+  displayTeam() {
+    $(".list-display").show();
+    $(".list-display").text("");
+    $(".display-screen .sprite-container").hide();
+    $(".display-screen .flavor-text-box").hide();
+    $(".add-team-box").hide();
+
+    for (let i = 0; i < this.roster.length; i++) {
+      $(".list-display").append(`<p class = "${this.roster[i].name}">${this.roster[i].name}</p>`);
+      $(`.${this.roster[i].name}`).click(()=>{
+        displayPokemon.name = this.roster[i].name;
+        console.log(displayPokemon.name);
+        displayPokemon.flavorTextLookup(this.roster[i].name);
+
+       });
+    }
+  }
+
 }
 // ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-const currentTeam = new PokemonTeam();
 
 function removePokemon(id) {
   // if (currentTeam.roster.includes(pokemonName)) {
@@ -52,4 +70,3 @@ function removePokemon(id) {
     }
   }
 }
-
