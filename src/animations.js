@@ -26,7 +26,7 @@ export function blinkingButtons () {
 };
 
 Pokemon.prototype.imgAnimation = function () {
-  switch(this.type[0] || this.type[1]){
+  switch(this.type[0] || this.type[1]){ //main type is run first
     case 'fire':
       $('.sprite-container img').addClass('shake-fire')
       setTimeout(function(){$('.sprite-container img').removeClass('shake-fire')},1000)
