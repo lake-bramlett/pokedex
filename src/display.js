@@ -70,6 +70,7 @@ Pokemon.prototype.displayText = function(){
 Pokemon.prototype.displayStats = function(){
   let nameCap = this.name.charAt(0).toUpperCase() + this.name.slice(1);
   $("#name").val(`${nameCap}`);
+  $('.number-block .output').text(this.number);
   $(".type-1").val(`${this.type[0]}`);
   if(this.type[1] != undefined){
     $(".type-2").val(`${this.type[1]}`);
