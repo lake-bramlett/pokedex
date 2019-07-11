@@ -83,6 +83,13 @@ Pokemon.prototype.evolvesTo = function(currentPokemon, url){
       evolvesToArray.push(evolutionChain.chain.evolves_to[0].evolves_to[0].species.name);
     }
 
+    if (evolvesToArray.length>0) {
+      if (currentPokemon === evolutionChain.chain.evolves_to[0].evolves_to[0].species.name){
+        evolvesToArray = [];
+      }
+    }
+
+
     console.log(evolvesToArray);
 
 
