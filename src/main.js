@@ -31,6 +31,7 @@ $(document).ready(function() {
   // this delays the load of the initial pokemon
   setTimeout(function(){
     displayPokemon.flavorTextLookup(pokemonIndex);
+
   }, 5000)
 
   $('#name-form').submit(function(event){
@@ -40,13 +41,14 @@ $(document).ready(function() {
     let name = $('#name').val().toLowerCase();
     userLang = $('#language').val();
     displayPokemon.flavorTextLookup(name);
+    
 
   });
   $('.sprite-container').on('click', function(){
     console.log('clicked');
     console.log(displayPokemon.name);
     if (currentTeam.roster.length < 6) {
-      currentTeam.addPokemon(displayPokemon.name);  
+      currentTeam.addPokemon(displayPokemon.name);
     }
     console.log(currentTeam.roster);
     displayPokemon.imgAnimation();
