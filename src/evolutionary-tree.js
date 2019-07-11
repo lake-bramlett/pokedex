@@ -14,8 +14,8 @@ import "./nextpokemon.js";
 import "./language.js";
 
 let testPokemon = new Pokemon();
-const evolvesToArray = [];
-const evolvesFromArray = [];
+export let evolvesToArray = [];
+export let evolvesFromArray = [];
 
 Pokemon.prototype.generateEvolutions = function(pokemonName){
   let evolutionPromise = new Promise(function(resolve,reject){
@@ -37,7 +37,11 @@ Pokemon.prototype.generateEvolutions = function(pokemonName){
 
   evolutionPromise.then(response => {
     let pokemonCalled = JSON.parse(response);
-      // evolvesFromArray.push(pokemonCalled.evolves_from_species.name);
+    evolvesFromArray = [];
+    if(pokemonCalled.evolves_from_species != null){
+      evolvesFromArray.push(pokemonCalled.evolves_from_species.name);
+    }
+    console.log(evolvesFromArray);
     let currentPokemon = pokemonCalled.name;
     let evolutionTreeURL = pokemonCalled.evolution_chain.url;
     console.log(pokemonCalled);
@@ -70,13 +74,22 @@ Pokemon.prototype.evolvesTo = function(currentPokemon, url){
     let evolutionChain = JSON.parse(response);
     console.log(evolutionChain);
 
-
+    evolvesToArray = [];
     if(evolutionChain.chain.evolves_to.length > 0 && evolutionChain.chain.evolves_to[0].species.name != currentPokemon){
       evolvesToArray.push(evolutionChain.chain.evolves_to[0].species.name)
     }
-    if(evolutionChain.chain.evolves_to[0].evolves_to.length > 0){
+
+    if(evolutionChain.chain.evolves_to[0].evolves_to.length > 0 && evolutionChain.chain.evolves_to[0].evolves_to[0].species.name != currentPokemon){
       evolvesToArray.push(evolutionChain.chain.evolves_to[0].evolves_to[0].species.name);
     }
+
+    if (evolvesToArray.length>0) {
+      if (currentPokemon === evolutionChain.chain.evolves_to[0].evolves_to[0].species.name){
+        evolvesToArray = [];
+      }
+    }
+
+
     console.log(evolvesToArray);
 
 
@@ -85,5 +98,4 @@ Pokemon.prototype.evolvesTo = function(currentPokemon, url){
   });
 }
 
-testPokemon.generateEvolutions("charmeleon");
-console.log(evolvesFromArray);
+// testPokemon.generateEvolutions("pichu");

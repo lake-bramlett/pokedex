@@ -14,6 +14,7 @@ import { bootUp,blinkingButtons,imgAnimation } from './animations.js';
 import "./nextpokemon.js";
 import "./language.js";
 import "./evolutionary-tree.js";
+import {evolvesToArray, evolvesFromArray} from "./evolutionary-tree.js";
 export let userLang = "en";
 // this controls the random pokemon of the day
 let today = new Date();
@@ -31,6 +32,7 @@ $(document).ready(function() {
   // this delays the load of the initial pokemon
   setTimeout(function(){
     displayPokemon.flavorTextLookup(pokemonIndex);
+
   }, 5000)
 
   $('#name-form').submit(function(event){
@@ -41,12 +43,13 @@ $(document).ready(function() {
     userLang = $('#language').val();
     displayPokemon.flavorTextLookup(name);
 
+
   });
   $('.sprite-container').on('click', function(){
     console.log('clicked');
     console.log(displayPokemon.name);
     if (currentTeam.roster.length < 6) {
-      currentTeam.addPokemon(displayPokemon.name);  
+      currentTeam.addPokemon(displayPokemon.name);
     }
     console.log(currentTeam.roster);
     displayPokemon.imgAnimation();
@@ -83,5 +86,18 @@ $(document).ready(function() {
   $('.team-button').click(function(){
     currentTeam.displayTeam();
   });
+
+
+  $(".d-up").click(function(){
+    if (evolvesToArray.length>0) {
+      displayPokemon.flavorTextLookup(evolvesToArray[0]);
+    }
+  })
+
+  $(".d-down").click(function(){
+    if (evolvesFromArray.length>0) {
+      displayPokemon.flavorTextLookup(evolvesFromArray[0]);
+    }
+  })
 
 });
