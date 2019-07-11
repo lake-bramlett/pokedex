@@ -49,7 +49,7 @@ $(document).ready(function() {
 
 
   });
-  $('.sprite-container').on('click', function(){
+  $('.sprite-container').click(function(){
     console.log('clicked');
     console.log(displayPokemon.name);
     if (currentTeam.roster.length < 6) {
