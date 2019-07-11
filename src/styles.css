@@ -504,24 +504,31 @@ body {
   }
 
   .list-display {
-    overflow: auto;
-    height: 576px;
+    height: 444px;
     top: 1rem;
     font-size: 2.5rem;
     margin: auto;
     width: 90%;
     overflow: auto;
     left: 2.6rem;
+    overflow: -moz-scrollbars-vertical;
+    overflow-y: scroll;
   }
 
   .sprite-container {
     width: 100%;
-    height: 23rem;
+    height: 20rem;
     overflow-x: scroll;
     overflow-y: hidden;
     white-space: nowrap;
     -webkit-overflow-scrolling: touch;
 
+  }
+
+  .pokeballs {
+    text-align: right;
+    height: 24px;
+    padding: 20px 20px 0px 0px;
   }
 
   .test-block{
@@ -548,6 +555,15 @@ body {
     display: none;
   }
 
+  .clear-team-box {
+    width: 90%;
+    margin: auto;
+    overflow: auto;
+    font-size: 2.5rem;
+    border: solid;
+    display: none;
+  }
+
   img {
     height: 100%;
   }
@@ -556,7 +572,7 @@ body {
     height: 225px;
     width: 530px;
     border-radius: 25px;
-    padding: 2rem;
+    padding: 1rem 2rem 2rem 2rem;
   }
   .sub-screen span {
     display: inline-block;
@@ -674,3 +690,13 @@ body {
     transition: background-color 0.5s ease;
     background-color: #0099da;
   }
+
+  ::-webkit-scrollbar {
+  -webkit-appearance: none;
+  width: 7px;
+}
+::-webkit-scrollbar-thumb {
+  border-radius: 4px;
+  background-color: rgba(0, 0, 0, .5);
+  -webkit-box-shadow: 0 0 1px rgba(255, 255, 255, .5);
+}

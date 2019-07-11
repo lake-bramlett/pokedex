@@ -5,11 +5,8 @@ import {Pokemon, myPokemon, PokemonListByType} from "./pokemon-api-caller.js";
 import {talkingPokedex} from "./animations.js";
 import {displayPokemon} from './main.js';
 
-
-
-
 // this controls timers for the displayText function
-const timerArray = [];
+export const timerArray = [];
 
 
 export function convertWeight(inputWeight){
@@ -26,12 +23,14 @@ export function convertHeight (inputHeight){
 
 Pokemon.prototype.displayImg = function(){
   $(".list-display").hide();
+  $('.clear-team-box').hide();
   $(".display-screen .sprite-container").show();
   $(".display-screen .flavor-text-box").show();
   let displayArea = $(".sprite-container");
   let img = `<img src='${this.sprite}'>`;
   // console.log(`<img src='${this.sprite}'>`);
   displayArea.html(img);
+  $('.add-team-box').show();
 }
 
 Pokemon.prototype.displayText = function(){
@@ -54,7 +53,6 @@ Pokemon.prototype.displayText = function(){
     if (i === flavorArray.length) {
       clearInterval(typewriterTimer);
       let addTeamTimer = setTimeout(function(){
-        $('.add-team-box').show();
       }, 1000);
       timerArray.push(addTeamTimer);
     }
@@ -71,6 +69,7 @@ Pokemon.prototype.displayText = function(){
 Pokemon.prototype.displayStats = function(){
   let nameCap = this.name.charAt(0).toUpperCase() + this.name.slice(1);
   $("#name").val(`${nameCap}`);
+  $('.number-block .output').text(this.number);
   $(".type-1").val(`${this.type[0]}`);
   if(this.type[1] != undefined){
     $(".type-2").val(`${this.type[1]}`);
@@ -90,6 +89,7 @@ PokemonListByType.prototype.displayList = function(){
   $(".display-screen .sprite-container").hide();
   $(".display-screen .flavor-text-box").hide();
   $(".add-team-box").hide();
+  $(".clear-team-box").hide();
 
   // this stops the set timeout from firing while lists are up
   if (timerArray.length != 0) {
