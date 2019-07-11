@@ -77,12 +77,12 @@ Pokemon.prototype.evolvesTo = function(currentPokemon, url){
     evolvesToArray = [];
     if(evolutionChain.chain.evolves_to.length > 0 && evolutionChain.chain.evolves_to[0].species.name != currentPokemon){
       evolvesToArray.push(evolutionChain.chain.evolves_to[0].species.name)
-
-      if(evolutionChain.chain.evolves_to[0].evolves_to.length > 0){
-        evolvesToArray.push(evolutionChain.chain.evolves_to[0].evolves_to[0].species.name);
-      }
-
     }
+
+    if(evolutionChain.chain.evolves_to[0].evolves_to.length > 0 && evolutionChain.chain.evolves_to[0].evolves_to[0].species.name != currentPokemon){
+      evolvesToArray.push(evolutionChain.chain.evolves_to[0].evolves_to[0].species.name);
+    }
+
     console.log(evolvesToArray);
 
 

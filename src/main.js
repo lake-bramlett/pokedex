@@ -14,6 +14,7 @@ import { bootUp,blinkingButtons,imgAnimation } from './animations.js';
 import "./nextpokemon.js";
 import "./language.js";
 import "./evolutionary-tree.js";
+import {evolvesToArray, evolvesFromArray} from "./evolutionary-tree.js";
 export let userLang = "en";
 // this controls the random pokemon of the day
 let today = new Date();
@@ -41,7 +42,7 @@ $(document).ready(function() {
     let name = $('#name').val().toLowerCase();
     userLang = $('#language').val();
     displayPokemon.flavorTextLookup(name);
-    
+
 
   });
   $('.sprite-container').on('click', function(){
@@ -85,5 +86,18 @@ $(document).ready(function() {
   $('.team-button').click(function(){
     currentTeam.displayTeam();
   });
+
+
+  $(".d-up").click(function(){
+    if (evolvesToArray.length>0) {
+      displayPokemon.flavorTextLookup(evolvesToArray[0]);
+    }
+  })
+
+  $(".d-down").click(function(){
+    if (evolvesFromArray.length>0) {
+      displayPokemon.flavorTextLookup(evolvesFromArray[0]);
+    }
+  })
 
 });
