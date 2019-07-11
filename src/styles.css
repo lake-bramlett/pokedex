@@ -571,7 +571,7 @@ body {
     height: 225px;
     width: 530px;
     border-radius: 25px;
-    padding: 2rem;
+    padding: 1rem 2rem 2rem 2rem; 
   }
   .sub-screen span {
     display: inline-block;
@@ -619,16 +619,6 @@ body {
     -webkit-appearance: none;
     border-radius: 0;
     border: none;
-  }
-
-  .height-block {
-    display: inline-block;
-    width: 44%;
-  }
-
-  .weight-block {
-    display: inline-block;
-    width: 53%;
   }
 
   .screen-off {
