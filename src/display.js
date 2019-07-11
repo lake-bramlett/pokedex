@@ -115,7 +115,11 @@ export function missingNo (){
   timerArray.forEach(function(entry){
     clearInterval(entry);
   });
-  
+
+  $(".list-display").hide();
+  $(".sprite-container").show();
+  $(".flavor-text-box").show();
+
   $(".sprite-container img").attr("src", "https://vignette.wikia.nocookie.net/nintendo/images/8/85/MissingNoNormal.png/revision/latest?cb=20131114211037&path-prefix=en");
 
   $(".name-block input").val("m̶͎̔i̸̝̽̇ş̵̌̌̅͜͜s̶̖̥̠̅į̶̘̽̚n̴̫̈̓́g̸̮̼̃̀͝ ̴̮̆̕n̷̝̥̂o̴̢̓̀͜");
