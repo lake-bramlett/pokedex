@@ -681,6 +681,16 @@ body {
     position: relative;
   }
 
+  .height-block {
+    display: inline-block;
+    width: 40%;
+  }
+
+  .weight-block {
+    display: inline-block;
+    width: 50%;
+  }
+
   .pokedex-on {
     ransition: background-color 0.5s ease;
     background-color: #85d6f9;
