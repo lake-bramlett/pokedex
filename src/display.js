@@ -7,6 +7,7 @@ import {displayPokemon} from './main.js';
 
 
 
+
 // this controls timers for the displayText function
 const timerArray = [];
 
@@ -108,7 +109,21 @@ PokemonListByType.prototype.displayList = function(){
   });
 }
 
-// just for testing
-$(document).ready(function(){
+// missing no???
 
-});
+export function missingNo (){
+  timerArray.forEach(function(entry){
+    clearInterval(entry);
+  });
+  
+  $(".sprite-container img").attr("src", "https://vignette.wikia.nocookie.net/nintendo/images/8/85/MissingNoNormal.png/revision/latest?cb=20131114211037&path-prefix=en");
+
+  $(".name-block input").val("m̶͎̔i̸̝̽̇ş̵̌̌̅͜͜s̶̖̥̠̅į̶̘̽̚n̴̫̈̓́g̸̮̼̃̀͝ ̴̮̆̕n̷̝̥̂o̴̢̓̀͜");
+  $(".flavor-text-box").text("Error: Pokemon not found");
+  $(".type-1").val("");
+  $(".type-2").val("");
+  $(".height-block span.output").text("??");
+  $(".weight-block span.output").text("??");
+
+  displayPokemon.playSound(100);
+}

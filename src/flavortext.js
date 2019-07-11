@@ -2,6 +2,7 @@
 import {Pokemon} from "./pokemon-api-caller.js";
 import $ from "jquery";
 import "./display.js";
+import {missingNo} from "./display.js";
 import "./weight-height-calc.js";
 let userInput = "pikachu";
 import { userLang } from './main.js'
@@ -20,6 +21,8 @@ Pokemon.prototype.flavorTextLookup = function(userInput){
       if (this.status === 200) {
         resolve(request.response);
       } else {
+        console.log("Flavor text rejection");
+        missingNo();
         reject(Error(request.statusText));
       }
     };
