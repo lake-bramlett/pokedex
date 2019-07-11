@@ -83,6 +83,7 @@ Pokemon.prototype.evolvesTo = function(currentPokemon, url){
       evolvesToArray.push(evolutionChain.chain.evolves_to[0].evolves_to[0].species.name);
     }
 
+    // special case for evolution trees that are three long
     if (evolvesToArray.length>0) {
       if (currentPokemon === evolutionChain.chain.evolves_to[0].evolves_to[0].species.name){
         evolvesToArray = [];
