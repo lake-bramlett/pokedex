@@ -13,7 +13,12 @@ import "./weight-height-calc.js";
 import { bootUp,blinkingButtons,imgAnimation } from './animations.js';
 import "./nextpokemon.js";
 import "./language.js";
+
 import { timerArray, fullTeamStopTime } from './display.js'
+
+import "./evolutionary-tree.js";
+import {evolvesToArray, evolvesFromArray} from "./evolutionary-tree.js";
+
 export let userLang = "en";
 // this controls the random pokemon of the day
 let today = new Date();
@@ -31,6 +36,7 @@ $(document).ready(function() {
   // this delays the load of the initial pokemon
   setTimeout(function(){
     displayPokemon.flavorTextLookup(pokemonIndex);
+
   }, 5000)
 
   $('#name-form').submit(function(event){
@@ -41,12 +47,14 @@ $(document).ready(function() {
     userLang = $('#language').val(); 
     displayPokemon.flavorTextLookup(name);
 
+
   });
   $('.sprite-container').on('click', function(){
     console.log('clicked');
     console.log(displayPokemon.name);
     if (currentTeam.roster.length < 6) {
       currentTeam.addPokemon(displayPokemon.name);
+
     }
     if (currentTeam.roster.length >= 5) {
       $('.add-team-box').hide();
@@ -54,7 +62,6 @@ $(document).ready(function() {
         clearInterval(entry);
         $('.clear-team-box').show();
       });
-
     }
     console.log(currentTeam.roster);
     displayPokemon.imgAnimation();
@@ -79,6 +86,14 @@ $(document).ready(function() {
     myPokemonList.pokemonTypeCall(`${selectedType}`);
   });
 
+  $(".type-1").click(function(){
+    $(".type-2").val("");
+    let selectedType = $('.type-1 option:selected').val();
+    let myPokemonList = new PokemonListByType();
+    myPokemonList.pokemonTypeCall(`${selectedType}`);
+  });
+
+
   //display team list
   $('.team-button').click(function(){
     $('.add-team-box').hide();
@@ -88,6 +103,19 @@ $(document).ready(function() {
     currentTeam.roster = [];
     $('.pokeballs').text('');
     $('.list-display').text('');
+  })
+
+
+  $(".d-up").click(function(){
+    if (evolvesToArray.length>0) {
+      displayPokemon.flavorTextLookup(evolvesToArray[0]);
+    }
+  })
+
+  $(".d-down").click(function(){
+    if (evolvesFromArray.length>0) {
+      displayPokemon.flavorTextLookup(evolvesFromArray[0]);
+    }
   })
 
 });

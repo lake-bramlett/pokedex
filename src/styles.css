@@ -621,6 +621,16 @@ body {
     border: none;
   }
 
+  .height-block {
+    display: inline-block;
+    width: 44%;
+  }
+
+  .weight-block {
+    display: inline-block;
+    width: 53%;
+  }
+
   .screen-off {
     background-color: #587e8c;
   }

@@ -12,6 +12,7 @@ let result = [];
 
 Pokemon.prototype.flavorTextLookup = function(userInput){
   this.pokemonNameCall(userInput);
+  this.generateEvolutions(userInput);
   let flavorTextPromise = new Promise(function (resolve, reject) {
     let request = new XMLHttpRequest();
     let url = `https://pokeapi.co/api/v2/pokemon-species/${userInput}`;
