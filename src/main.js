@@ -13,6 +13,7 @@ import "./weight-height-calc.js";
 import { bootUp,blinkingButtons,imgAnimation } from './animations.js';
 import "./nextpokemon.js";
 import "./language.js";
+import { timerArray, fullTeamStopTime } from './display.js'
 export let userLang = "en";
 // this controls the random pokemon of the day
 let today = new Date();
@@ -45,7 +46,15 @@ $(document).ready(function() {
     console.log('clicked');
     console.log(displayPokemon.name);
     if (currentTeam.roster.length < 6) {
-      currentTeam.addPokemon(displayPokemon.name);  
+      currentTeam.addPokemon(displayPokemon.name);
+    }
+    if (currentTeam.roster.length >= 5) {
+      $('.add-team-box').hide();
+      fullTeamStopTime.forEach(function(entry){
+        clearInterval(entry);
+        $('.clear-team-box').show();
+      });
+
     }
     console.log(currentTeam.roster);
     displayPokemon.imgAnimation();
@@ -72,7 +81,13 @@ $(document).ready(function() {
 
   //display team list
   $('.team-button').click(function(){
+    $('.add-team-box').hide();
     currentTeam.displayTeam();
   });
+  $('.clear-team-box').click(function() {
+    currentTeam.roster = [];
+    $('.pokeballs').text('');
+    $('.list-display').text('');
+  })
 
 });
