@@ -504,7 +504,6 @@ body {
   }
 
   .list-display {
-    overflow: auto;
     height: 444px;
     top: 1rem;
     font-size: 2.5rem;
@@ -512,6 +511,8 @@ body {
     width: 90%;
     overflow: auto;
     left: 2.6rem;
+    overflow: -moz-scrollbars-vertical;
+    overflow-y: scroll;
   }
 
   .sprite-container {
@@ -571,7 +572,7 @@ body {
     height: 225px;
     width: 530px;
     border-radius: 25px;
-    padding: 1rem 2rem 2rem 2rem; 
+    padding: 1rem 2rem 2rem 2rem;
   }
   .sub-screen span {
     display: inline-block;
@@ -689,3 +690,13 @@ body {
     transition: background-color 0.5s ease;
     background-color: #0099da;
   }
+
+  ::-webkit-scrollbar {
+  -webkit-appearance: none;
+  width: 7px;
+}
+::-webkit-scrollbar-thumb {
+  border-radius: 4px;
+  background-color: rgba(0, 0, 0, .5);
+  -webkit-box-shadow: 0 0 1px rgba(255, 255, 255, .5);
+}
