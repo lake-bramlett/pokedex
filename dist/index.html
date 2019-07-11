@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+<head>
+  <meta charset="utf-8">
+  <title></title>
+  <link href="https://fonts.googleapis.com/css?family=VT323&display=swap" rel="stylesheet">
+</head>
+<body>
+  <div class="pokedex">
+    <div class="top">
+      <div class="header">
+        <div class="button-container-top" style="width: 50%; height: 100%; display: inline-block;">
+          <div class="button"><div class="button-inner pokedex-off"></div></div>
+          <div class="tiny-button red red-blink-off"></div>
+          <div class="tiny-button yellow yellow-blink-off"></div>
+          <div class="tiny-button green green-blink-off"></div>
+        </div>
+        <div class="divider-block">
+          <div class="divider-block-top"></div>
+          <div class="divider-block-bottom"></div>
+        </div>
+      </div>
+      <div class="bezel">
+        <div class="display-screen screen-off">
+          <div class="pokeballs"></div>
+
+          <div class="list-display"></div>
+          <div class="sprite-container">
+          </div>
+          <div class="flavor-text-box"></div>
+          <div class="add-team-box">Touch Sprite to Add to Team <span>◓</span></div>
+          <div class="clear-team-box">Touch Here to Clear Team</div>
+        </div>
+        <div class="tiny-button red"></div>
+        <div class="speaker">
+          <div class="grey-bar"></div>
+          <div class="grey-bar"></div>
+          <div class="grey-bar"></div>
+        </div>
+      </div>
+    </div>
+    <div class="bottom">
+      <div class="bottom-left">
+        <form id="name-form">
+        <div class="bottom-left-top">
+          <div class="button-2 green">
+            <select id='language' class="lang" name="">
+              <option value="en">EN</option>
+              <option value="es">ES</option>
+              <option value="ja">JA</option>
+              <option value="de">DE</option>
+              <option value="fr">FR</option>
+              <option value="ko">KO</option>
+              <option value="it">IT</option>
+            </select>
+          </div>
+          <button class="button-2 grey enter-button">ENTER</button>
+          <div class="button-2 grey team-button">TEAM</div>
+        </div>
+        <div class="bottom-left-bottom">
+          <div class="sub-screen screen-off">
+              <div class="name-block">
+                <span>Name: </span><input class="screen-off" type="text" name="" id="name"><span id="display"></span>
+              </div>
+            </form>
+            <div class="number-block">
+              <span>#:</span><span class="output"></span>
+            </div>
+            <div class="type-block">
+              <span>Type: </span>
+              <select class="type-1" name="">
+                <option value="">---</option>
+                <option value="bug">bug</option>
+                <option value="dark">dark</option>
+                <option value="dragon">dragon</option>
+                <option value="electric">electric</option>
+                <option value="fairy">fairy</option>
+                <option value="fighting">fighting</option>
+                <option value="fire">fire</option>
+                <option value="flying">flying</option>
+                <option value="ghost">ghost</option>
+                <option value="grass">grass</option>
+                <option value="ground">ground</option>
+                <option value="ice">ice</option>
+                <option value="normal">normal</option>
+                <option value="poison">poison</option>
+                <option value="psychic">psychic</option>
+                <option value="rock">rock</option>
+                <option value="steel">steel</option>
+                <option value="water">water</option>
+              </select>
+              <select class="type-2" name="">
+                <option value="">---</option>
+                <option value="bug">bug</option>
+                <option value="dark">dark</option>
+                <option value="dragon">dragon</option>
+                <option value="electric">electric</option>
+                <option value="fairy">fairy</option>
+                <option value="fighting">fighting</option>
+                <option value="fire">fire</option>
+                <option value="flying">flying</option>
+                <option value="ghost">ghost</option>
+                <option value="grass">grass</option>
+                <option value="ground">ground</option>
+                <option value="ice">ice</option>
+                <option value="normal">normal</option>
+                <option value="poison">poison</option>
+                <option value="psychic">psychic</option>
+                <option value="rock">rock</option>
+                <option value="steel">steel</option>
+                <option value="water">water</option>
+              </select>
+            </div>
+            <div class="height-block">
+              <span>Height:</span><span class="output"></span>
+            </div>
+            <div class="weight-block">
+              <span>Weight:</span><span class="output"></span>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="bottom-right">
+        <div class="d-pad">
+          <div class="d-up"></div>
+          <div class="d-left"></div>
+          <div class="d-center"></div>
+          <div class="d-right"></div>
+          <div class="d-down"></div>
+        </div>
+      </div>
+    </div>
+  </div>
+<script type="text/javascript" src="bundle.js"></script></body>
+</html>
