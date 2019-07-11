@@ -30,6 +30,7 @@ export class PokemonTeam {
       this.id++;
       body.id = this.id;
       this.roster.push(body);
+      $('.pokeballs').append('◓ ');
     });
   }
 
@@ -39,6 +40,8 @@ export class PokemonTeam {
     $(".display-screen .sprite-container").hide();
     $(".display-screen .flavor-text-box").hide();
     $(".add-team-box").hide();
+    $('.clear-team-box').show();
+
 
     for (let i = 0; i < this.roster.length; i++) {
       $(".list-display").append(`<p class = "${this.roster[i].name}">${this.roster[i].name}</p>`);
