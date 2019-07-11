@@ -38,10 +38,10 @@ Pokemon.prototype.generateEvolutions = function(pokemonName){
   evolutionPromise.then(response => {
     let pokemonCalled = JSON.parse(response);
       // evolvesFromArray.push(pokemonCalled.evolves_from_species.name);
-
+    let currentPokemon = pokemonCalled.name;
     let evolutionTreeURL = pokemonCalled.evolution_chain.url;
     console.log(pokemonCalled);
-    this.evolvesTo(evolutionTreeURL);
+    this.evolvesTo(currentPokemon, evolutionTreeURL);
 
   });
 
@@ -49,7 +49,7 @@ Pokemon.prototype.generateEvolutions = function(pokemonName){
 
 }
 
-Pokemon.prototype.evolvesTo = function(url){
+Pokemon.prototype.evolvesTo = function(currentPokemon, url){
   let evolvesToPromise = new Promise(function(resolve,reject){
     let request = new XMLHttpRequest();
 
@@ -69,7 +69,15 @@ Pokemon.prototype.evolvesTo = function(url){
   evolvesToPromise.then(response => {
     let evolutionChain = JSON.parse(response);
     console.log(evolutionChain);
-    // console.log(evolutionChain.)
+
+
+    if(evolutionChain.chain.evolves_to.length > 0 && evolutionChain.chain.evolves_to[0].species.name != currentPokemon){
+      evolvesToArray.push(evolutionChain.chain.evolves_to[0].species.name)
+    }
+    if(evolutionChain.chain.evolves_to[0].evolves_to.length > 0){
+      evolvesToArray.push(evolutionChain.chain.evolves_to[0].evolves_to[0].species.name);
+    }
+    console.log(evolvesToArray);
 
 
 
@@ -77,5 +85,5 @@ Pokemon.prototype.evolvesTo = function(url){
   });
 }
 
-testPokemon.generateEvolutions("pikachu");
+testPokemon.generateEvolutions("charmeleon");
 console.log(evolvesFromArray);

@@ -38,6 +38,7 @@ Pokemon.prototype.displayText = function(){
     clearInterval(entry);
   });
 
+  $(".add-team-box").hide();
   $(".flavor-text-box").text("");
   let i = 0;
   let flavorArray = Array.from(this.flavortext[0]);
