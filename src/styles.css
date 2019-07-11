@@ -269,11 +269,11 @@ body {
 @keyframes slide-fwd {
   0% {
     /* for some reason, translateZ doesnt work */
-    transform: translateZ(0) translateY(0) scale(1.0);
+    transform: translateZ(0) translateY(0) scale(-.6);
   }
   100% {
 
-    transform: translateZ(160px) translateY(100px) scale(2.0);
+    transform: translateZ(160px) translateY(20px) scale(1.7);
   }
 }
 
