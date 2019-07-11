@@ -6,7 +6,7 @@ import {talkingPokedex} from "./animations.js";
 import {displayPokemon} from './main.js';
 
 
-
+ 
 // this controls timers for the displayText function
 export const timerArray = [];
 

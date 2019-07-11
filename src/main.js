@@ -38,7 +38,7 @@ $(document).ready(function() {
     console.log('form submitted');
 
     let name = $('#name').val().toLowerCase();
-    userLang = $('#language').val();
+    userLang = $('#language').val(); 
     displayPokemon.flavorTextLookup(name);
 
   });
