@@ -11,6 +11,7 @@ export class PokemonTeam {
   }
 
   addPokemon(pokemonName) {
+    console.log("add pokemon is being called");
     let promise = new Promise(function(resolve, reject) {
       let request = new XMLHttpRequest();
       const url = `https://pokeapi.co/api/v2/pokemon/${pokemonName}`;
