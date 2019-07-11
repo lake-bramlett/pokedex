@@ -7,7 +7,8 @@ import "./display.js";
 import "./pokemon-cries.js";
 import { Pokemon, PokemonListByType } from "./pokemon-api-caller.js";
 import './randompokemon.js'
-import './teampokemon.js'
+import { PokemonTeam } from './teampokemon.js';
+import './teampokemon.js';
 import "./weight-height-calc.js";
 import { bootUp,blinkingButtons,imgAnimation } from './animations.js';
 import "./nextpokemon.js";
@@ -17,11 +18,8 @@ export let userLang = "en";
 // this controls the random pokemon of the day
 let today = new Date();
 let pokemonIndex = parseInt((today.getTime()/8.64e+7)%151);
-let pokemonOfTheDay = new Pokemon();
-
-let pokemonSearch = new Pokemon();
-
-
+export let displayPokemon = new Pokemon();
+export const currentTeam = new PokemonTeam();
 
 $(document).ready(function() {
 
@@ -32,32 +30,26 @@ $(document).ready(function() {
 
   // this delays the load of the initial pokemon
   setTimeout(function(){
-    pokemonOfTheDay.flavorTextLookup(pokemonIndex);
+    displayPokemon.flavorTextLookup(pokemonIndex);
   }, 5000)
 
   $('#name-form').submit(function(event){
     event.preventDefault()
     console.log('form submitted');
 
-
     let name = $('#name').val().toLowerCase();
-    //-----------changes language from inside the submit-----------
     userLang = $('#language').val();
-    // pokemonSearch.userLangChange(inputLanguage);
-    // pokemonSearch.flavorTextLookup(name);
-    //----------------------
-    pokemonSearch.flavorTextLookup(name);
-    console.log(pokemonSearch)
-    $('.display-screen').click(function(){
-      displayImg(pokemonSearch)
-      console.log('trying to display')
-    });
+    displayPokemon.flavorTextLookup(name);
 
   });
   $('.sprite-container').on('click', function(){
     console.log('clicked');
-    console.log(pokemonSearch);
-    pokemonSearch.imgAnimation();
+    console.log(displayPokemon.name);
+    if (currentTeam.roster.length < 6) {
+      currentTeam.addPokemon(displayPokemon.name);  
+    }
+    console.log(currentTeam.roster);
+    displayPokemon.imgAnimation();
   });
 
     // this controls the type selection and list display
@@ -86,5 +78,10 @@ $(document).ready(function() {
     myPokemonList.pokemonTypeCall(`${selectedType}`);
   });
 
+
+  //display team list
+  $('.team-button').click(function(){
+    currentTeam.displayTeam();
+  });
 
 });

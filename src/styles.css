@@ -38,55 +38,55 @@ body {
 
 @keyframes swim {
   0% {
-    transform: translateY(110px);
+    transform: translateY(40px);
   }
   5% {
-    transform: translateY(90px) translateX(75px);
+    transform: translateY(20px) translateX(75px);
   }
   10% {
-    transform: translateY(110px);
+    transform: translateY(40px);
   }
   15% {
-    transform: translateY(90px) translateX(-75px);
+    transform: translateY(20px) translateX(-75px);
   }
   20% {
-    transform: translateY(110px);
+    transform: translateY(40px);
   }
   25% {
-    transform: translateY(90px) translateX(75px);
+    transform: translateY(20px) translateX(75px);
   }
   30% {
-    transform: translateY(110px);
+    transform: translateY(40px);
   }
   35% {
-    transform: translateY(90px) translateX(-75px);
+    transform: translateY(20px) translateX(-75px);
   }
   40% {
-    transform: translateY(110px);
+    transform: translateY(40px);
   }
   45% {
-    transform: translateY(90px) translateX(75px);
+    transform: translateY(20px) translateX(75px);
   }
   50% {
-    transform: translateY(110px);
+    transform: translateY(40px);
   }
   55% {
-    transform: translateY(90px) translateX(-75px);
+    transform: translateY(20px) translateX(-75px);
   }
-  60% {
-    transform: translateY(110px);
+  40% {
+    transform: translateY(40px);
   }
   65% {
-    transform: translateY(90px) translateX(75px);
+    transform: translateY(20px) translateX(75px);
   }
   70% {
-    transform: translateY(110px);
+    transform: translateY(40px);
   }
   75% {
-    transform: translateY(90px) translateX(-75px);
+    transform: translateY(20px) translateX(-75px);
   }
   85% {
-    transform: translateY(110px);
+    transform: translateY(40px);
   }
   100% {
     transform: translateY(-80px);
@@ -269,11 +269,11 @@ body {
 @keyframes slide-fwd {
   0% {
     /* for some reason, translateZ doesnt work */
-    transform: translateZ(0) translateY(0) scale(1.0);
+    transform: translateZ(0) translateY(0) scale(-.6);
   }
   100% {
 
-    transform: translateZ(160px) translateY(100px) scale(2.0);
+    transform: translateZ(160px) translateY(20px) scale(1.7);
   }
 }
 
