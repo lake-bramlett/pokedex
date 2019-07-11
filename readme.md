@@ -15,7 +15,7 @@ _A digital Pokedex from the Pokemon television / game series. Pokedexes are hand
 
 ## Using the Pokedex
 
-_Enter a Pokemon name to search by name, or click left and right on the D-pad to browse all Pokemon in order. Pokemon can be queried by type by clicking on the type selector._
+_Enter a Pokemon name to search by name, or click left and right on the D-pad to browse all Pokemon in order. Pokemon can be queried by type by clicking on the type selector. Click up and down on the D-pad to view the Pokemon's evolution tree._
 
 ## Link to GitHub Pages
 
@@ -24,10 +24,10 @@ _Link to GitHub repo:_
 
 
 ### Project Credits
-_User Interface Design - Lake Bramlett_
-_Animations and Front End Design - Jacob Irwin and Lake Bramlett_
-_Back End Functionality, Teams, and Pokemon-Of-The-Day algorithm - Alex Siegberg and Tae Lee_
-_Product Design - Hugh Donkin_
+* _User Interface Design - Lake Bramlett_
+* _Animations and Front End Design - Jacob Irwin and Lake Bramlett_
+* _Back End Functionality, Teams, and Pokemon-Of-The-Day algorithm - Alex Sergejev and Tae Lee_
+* _Product Design - Hugh Donkin_
 
 ### License
 
